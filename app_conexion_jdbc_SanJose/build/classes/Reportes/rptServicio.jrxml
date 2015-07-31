@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptServicio" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6973b8f-5671-47c0-95e4-54efec2a9af9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     servicio.`id_servicio` AS servicio_id_servicio,
+     servicio.`cod_servicio` AS servicio_cod_servicio,
+     servicio.`nombre_servicio` AS servicio_nombre_servicio,
+     servicio.`preciounidad_servicio` AS servicio_preciounidad_servicio
+FROM
+     `servicio` servicio]]>
+	</queryString>
+	<field name="servicio_id_servicio" class="java.lang.Integer"/>
+	<field name="servicio_cod_servicio" class="java.lang.String"/>
+	<field name="servicio_nombre_servicio" class="java.lang.String"/>
+	<field name="servicio_preciounidad_servicio" class="java.lang.Integer"/>
+	<group name="servicio_id_servicio">
+		<groupExpression><![CDATA[$F{servicio_id_servicio}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement uuid="cf4be000-2f65-440e-9976-5deb0ccc7aac" mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#B89F7D" backcolor="#F2EBDF"/>
+					<rectangle>
+						<reportElement uuid="238a6541-2e49-4fe2-8254-6d52a1c2246c" mode="Opaque" x="21" y="0" width="36" height="24" backcolor="#736343"/>
+						<graphicElement>
+							<pen lineWidth="0.0"/>
+						</graphicElement>
+					</rectangle>
+					<textField>
+						<reportElement uuid="ffec645f-f8bd-4456-b1e4-2807bc720f14" style="SubTitle" x="68" y="0" width="755" height="24" forecolor="#736343"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{servicio_id_servicio}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement uuid="d5b3f2c2-e7fa-4a9f-87bf-83b334412620" x="0" y="0" width="164" height="126"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="b40a1852-ec46-4225-acfd-1fb8085db745" style="Title" x="198" y="0" width="363" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Reporte Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e42fb0b2-0bb8-4d0c-b306-428afc195525" style="SubTitle" x="267" y="62" width="231" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Reporte de todos los servicios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7965acfe-ad9a-4e07-8fde-7a84a87d3457" x="242" y="94" width="244" height="42"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Aca muestra todos los servicios que ofrece el GRUPO EDITORIAL San Jose mediante un REORTE]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="302349dc-2913-441d-8c94-1fd250bcf8ef" x="633" y="-73" width="219" height="209"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="5785eb67-1836-4839-af64-bf324353c0de" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="b0f0cdfb-ec55-4868-9f7f-2289ee51b1a2" style="Column header" x="0" y="0" width="267" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[Codigo del Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f8ae234-6093-4675-9d57-03a5c1df5a3b" style="Column header" x="267" y="0" width="267" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[Nombre de Servicio / Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af19763e-7325-42c3-9295-935f9b89bbf4" style="Column header" x="534" y="0" width="267" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[Precio del Servcio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="682e6534-1fca-4581-9b53-a15afaa7c484" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="d1bc2c27-1701-4fd8-a57b-e088b158b293" style="Detail" x="0" y="0" width="267" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{servicio_cod_servicio}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="7e4ad98f-7509-46c9-9a2c-00b3608f00f9" style="Detail" x="267" y="0" width="267" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{servicio_nombre_servicio}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="818950ec-5a0b-48b1-8361-afd084683efd" style="Detail" x="534" y="0" width="267" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{servicio_preciounidad_servicio}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement uuid="8d278493-9017-47c7-bb93-a97dad5f4263" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="c7f4e893-072c-4d96-96ee-ac71bf72337e" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="818e0dc4-5634-41a3-96cf-e726feea565b" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="90001d74-c73a-41ae-865a-4721955555be" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="5dba8b57-7029-431a-b07c-f1f0bb5eea06" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
