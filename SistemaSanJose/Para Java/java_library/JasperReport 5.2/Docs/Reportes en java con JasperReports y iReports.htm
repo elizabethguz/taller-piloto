@@ -1,0 +1,1555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/ga.js" async="" type="text/javascript"></script><script async="" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/cbgapi.loaded_1"></script><script async="" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/cbgapi.loaded_0"></script><script type="text/javascript">(function() { var b=window,e="jstiming",g="tick";(function(){function d(a){this.t={};this.tick=function(a,d,c){c=void 0!=c?c:(new Date).getTime();this.t[a]=[c,d]};this[g]("start",null,a)}var a=new d;b.jstiming={Timer:d,load:a};if(b.performance&&b.performance.timing){var a=b.performance.timing,c=b[e].load,f=a.navigationStart,a=a.responseStart;0<f&&a>=f&&(c[g]("_wtsrt",void 0,f),c[g]("wtsrt_","_wtsrt",a),c[g]("tbsd_","wtsrt_"))}try{a=null,b.chrome&&b.chrome.csi&&(a=Math.floor(b.chrome.csi().pageT),c&&0<f&&(c[g]("_tbnd",void 0,b.chrome.csi().startE),
+c[g]("tbnd_","_tbnd",f))),null==a&&b.gtbExternal&&(a=b.gtbExternal.pageT()),null==a&&b.external&&(a=b.external.pageT,c&&0<f&&(c[g]("_tbnd",void 0,b.external.startE),c[g]("tbnd_","_tbnd",f))),a&&(b[e].pt=a)}catch(l){}})();b.tickAboveFold=function(d){var a=0;if(d.offsetParent){do a+=d.offsetTop;while(d=d.offsetParent)}d=a;750>=d&&b[e].load[g]("aft")};var h=!1;function k(){h||(h=!0,b[e].load[g]("firstScrollTime"))}b.addEventListener?b.addEventListener("scroll",k,!1):b.attachEvent("onscroll",k);
+ })();</script>
+<meta content="blogger" name="generator">
+<link href="http://lanzacodigos.blogspot.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Lanza Códigos - Atom" href="http://lanzacodigos.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Lanza Códigos - RSS" href="http://lanzacodigos.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Lanza Códigos - Atom" href="http://www.blogger.com/feeds/5666002681854029089/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="Lanza Códigos - Atom" href="http://lanzacodigos.blogspot.com/feeds/2709254378083056696/comments/default">
+<link rel="image_src" href="http://lh5.ggpht.com/_2VS9a5p08fM/TLFZMPjDgTI/AAAAAAAAAEI/Eu0VfpHxTlo/s72-c/toolsmenu_thumb.png?imgmax=800">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Lanza Códigos: Reportes en java con JasperReports y iReports</title>
+<link type="text/css" rel="stylesheet" href="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/103638431-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*-----------------------------------------------
+Theme Name                :  all tuts
+Blogger Theme by          :  Asker Akbar
+URL                       :  www.BloggerThemes.net
+Designed by               :  site5
+URL                       :  http://www.site5.com/
+-----------------------------------------------*/
+#navbar-iframe,#PageList99 h2,#LinkList99 h2{
+display: none;
+}
+* {
+margin: 0;
+padding: 0;
+}
+body {
+color: #333;
+background: #f0f0f0 url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzbVlQ_7I/AAAAAAAABD0/VlmqzYckr-8/s1600/bk_body.png) repeat-x;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+line-height: 135%;
+}
+a {
+color: #1FA2E1;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+a:focus {
+outline: none;
+}
+a img {
+border-width: 0;
+}
+ul {
+list-style: none;
+}
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+overflow: hidden;
+float: none;
+}
+.clearfix {
+display: block;
+}
+* html .clearfix {
+float: left;
+height: 1%;
+}
+#header-wrapper {
+position: relative;
+height: 185px;
+background: url(http://2.bp.blogspot.com/_A_BXOSXle0Y/THCzWsqZ9jI/AAAAAAAABCE/hvVYmeOthEY/s1600/bk_header.jpg) 0 51px no-repeat;
+}
+#header-inner {
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+#header {
+margin-top: 104px;
+position:absolute;
+left:0;
+}
+#header h1 {
+font-size: 48px;
+color: #333333;
+}
+#header a {
+color: #333333;
+text-decoration: none;
+}
+#header .description {
+color: #999999;
+display: block;
+font-size: 12px;
+margin-top: 6px;
+padding-left: 5px;
+padding-top: 5px;
+}
+#header img {
+margin-left: auto;
+margin-right: auto;
+}
+#header img{
+position: absolute;
+margin-top: -20px;
+left:0;
+}
+.ddsmoothmenu {
+margin-top: 6px;
+float: left;
+border-right: 1px solid #2F2F2F;
+}
+.ddsmoothmenu ul li {
+float: left;
+}
+.ddsmoothmenu ul li a{
+display: block;
+color: #ccc;
+text-decoration: none;
+border-left: 1px solid #2F2F2F;
+height: 42px;
+line-height: 42px;
+text-transform: uppercase;
+font-size: 11px;
+padding: 0 12px;
+}
+.ddsmoothmenu ul li a:hover {
+color: #FFFFFF;
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzXZJheoI/AAAAAAAABCU/YjcQwV9zPWw/s1600/bk_top_hover.png) 50% 0 no-repeat;
+}
+#topMenuRight {
+float: right;
+margin-top: 6px;
+}
+#topMenuRight ul li {
+float: left;
+}
+#topMenuRight ul li a{
+display: block;
+color: #ccc;
+text-decoration: none;
+height: 42px;
+line-height: 42px;
+font-size: 11px;
+padding: 0 8px;
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzacO1mlI/AAAAAAAABDU/6w49OgV5kK8/s1600/list_red_bullet.png) 1px 50% no-repeat;
+}
+#topMenuRight ul li a:hover {
+color: #FFFFFF;
+}
+#socialLinks {
+position: absolute;
+right: 0;
+top: 105px;
+background: url(http://3.bp.blogspot.com/_A_BXOSXle0Y/THCzW8vdwvI/AAAAAAAABCM/APy11sKKiAI/s1600/bk_social_links.png) 0 50% no-repeat;
+padding-left: 155px;
+height: 42px;
+}
+#socialLinks .linkedin, #socialLinks .facebook, #socialLinks .twitter, #socialLinks .rss {
+display: block;
+width: 32px;
+height: 32px;
+float: left;
+margin-left: 5px;
+text-indent: -9999px;
+}
+#socialLinks .linkedin:hover, #socialLinks .facebook:hover, #socialLinks .twitter:hover, #socialLinks .rss:hover {
+margin-bottom: 2px;
+}
+#socialLinks .linkedin {
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzYXhVUgI/AAAAAAAABC0/lVSm-Ox4n4w/s1600/ico_linkedin.png) 0 0 no-repeat;
+}
+#socialLinks .facebook {
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzYOrScQI/AAAAAAAABCs/7gEU2BSmjC4/s1600/ico_facebook.png) 0 0 no-repeat;
+}
+#socialLinks .twitter {
+background: url(http://3.bp.blogspot.com/_A_BXOSXle0Y/THCzaEdAllI/AAAAAAAABDM/xqrgAzvqlXk/s1600/ico_twitter.png) 0 0 no-repeat;
+}
+#socialLinks .rss {
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzZkYHVTI/AAAAAAAABDE/4JpVy-gULDE/s1600/ico_rss.png) 0 0 no-repeat;
+}
+#outer-wrapper {
+width: 960px;
+margin: 0 auto;
+}
+#content-wrapper{
+padding: 25px 0px 0px 0px;
+}
+#main-wrapper {
+float: left;
+width: 670px;
+margin-right: 10px;
+}
+#sidebar-wrapper {
+float: left;
+width: 280px;
+}
+.sidebar h2 {
+background: url(http://2.bp.blogspot.com/_A_BXOSXle0Y/THCzWaM66mI/AAAAAAAABB8/5jQ2h7gs8A0/s1600/bk_h2_right.png) no-repeat scroll 0 0 transparent;
+color: #FFFFFF;
+display: block;
+font-size: 14px;
+font-weight: bold;
+height: 39px;
+left: -2px;
+letter-spacing: 0;
+padding: 13px 15px 0 20px;
+text-transform: uppercase;
+top: 6px;
+width: 284px;
+position: relative;
+margin: 0px 0px 0px -6px;
+}
+.post {
+padding: 20px 40px;
+position: relative;
+background: url(http://3.bp.blogspot.com/_A_BXOSXle0Y/THCzcL6QrjI/AAAAAAAABEM/ZXnKEP2Sqzk/s1600/bk_box_mid.png) 0 0 repeat-y;
+}
+.postBoxTop {
+height: 5px;
+width: 668px;
+background: url(http://2.bp.blogspot.com/_A_BXOSXle0Y/THCzc6nEVJI/AAAAAAAABEk/OBM4Aharhq4/s1600/bk_box_top.png) 0 0 no-repeat;
+}
+.postBoxBottom {
+height: 5px;
+width: 668px;
+margin: 0px 0px 20px 0px;
+background: url(http://3.bp.blogspot.com/_A_BXOSXle0Y/THCzbtY2aNI/AAAAAAAABD8/nEk9pNIn0rQ/s1600/bk_box_bottom.png) 0 0 no-repeat;
+}
+.date {
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzVnvwxKI/AAAAAAAABBs/AS0k4p-2ZDk/s1600/bk_date.png) 0 0 no-repeat;
+width: 62px;
+height: 89px;
+left: -34px;
+top: 13px;
+text-align: center;
+position: absolute;
+font-size: 12px;
+color: #FFF;
+padding-top: 24px;
+}
+.post h3 {
+margin: 10px 0px 20px 0px;
+font-size: 22px;
+}
+.post h3 a, .post h3 a:visited, .post h3 strong {
+display: block;
+text-decoration: none;
+color: #333333;
+font-weight: normal;
+}
+.post h3 strong, .post h3 a:hover {
+color: #1FA2E1;
+}
+.post-body {
+margin: 0 0 .75em;
+line-height: 1.6em;
+}
+.post-body blockquote {
+line-height: 1.3em;
+}
+.post img, table.tr-caption-container {
+border: none;
+max-width: 95%;
+background: #F0F0F0;
+padding: 10px;
+margin: 5px;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+}
+.tr-caption-container img {
+border: none;
+padding: 0;
+}
+.post blockquote {
+border-left: 1px dashed #aaa;
+padding-left: 20px;
+margin: 20px 0 15px 20px;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-style: italic;
+background: url(http://2.bp.blogspot.com/_A_BXOSXle0Y/THCza_GADXI/AAAAAAAABDs/z08XouEB9Cg/s1600/bk_blockquote.jpg) 90% 0 no-repeat;
+}
+.post blockquote p {
+margin: .75em 0;
+}
+.metaRight{
+float: right;
+}
+.jump-link {
+display: block;
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzZV3BrmI/AAAAAAAABC8/phnFlQKVSgA/s1600/ico_readmore.png) 0 0 no-repeat;
+padding: 3px 0;
+padding-left: 35px;
+font-size: 14px;
+font-weight: bold;
+float: left;
+}
+.post-labels{
+background: url(http://3.bp.blogspot.com/_A_BXOSXle0Y/THCzatDCFtI/AAAAAAAABDk/2JQgpo3c7bM/s1600/star.png) no-repeat scroll 0 50% transparent;
+color: #CCCCCC;
+font-size: 11px;
+font-weight: bold;
+line-height: 100%;
+padding: 0 0 0 20px;
+text-transform: uppercase;
+margin: 10px 0px 10px 0px;
+}
+.post-author{
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzXsVbczI/AAAAAAAABCc/TCAPUdyb_4U/s1600/ico_author.png) no-repeat scroll 0 0 transparent;
+float: left;
+padding: 3px 0 3px 35px;
+margin: 0px 10px 0px 0px;
+}
+.comment-link{
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzX6susAI/AAAAAAAABCk/QfeXNfJX7vs/s1600/ico_comments.png) no-repeat scroll 0 0 transparent;
+float: left;
+color: #333;
+padding: 3px 0 3px 35px;
+margin: 0px 0px 0px 0px;
+}
+#comments{
+margin-left: 0px;
+}
+#comments h4 {
+color: #144266;
+font-size: 14px;
+margin: 0px 0px 10px 0px;
+}
+#comments-block {
+font-size: 14px;
+padding: 10px;
+line-height: 20px;
+margin: 0px 0px 20px 0px;
+}
+#comments-block .comment-author {
+-moz-background-inline-policy: continuous;
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzdvYMv2I/AAAAAAAABE0/8UWmTVraJ5k/s1600/bk_box_top_right.png) repeat-x scroll 0 100% #FDFDFD;
+border: 1px solid #EEEEEE;
+font-size: 15px;
+font-weight: normal;
+padding: 6px 0px 6px 15px;
+}
+#comments .blogger-comment-icon, .blogger-comment-icon {
+border-color: #E8DEC4;
+border-style: solid;
+border-width: 2px 1px 1px;
+line-height: 16px;
+padding: 5px;
+}
+#comments-block .comment-body {
+border-left: 1px solid #EBEBEB;
+border-right: 1px solid #EBEBEB;
+padding: 7px;
+background: #FFF;
+}
+#comments-block .comment-footer {
+text-align: right;
+border-bottom: 1px solid #EBEBEB;
+border-left: 1px solid #EBEBEB;
+background: #FFF;
+border-right: 1px solid #EBEBEB;
+font-size: 11px;
+line-height: 1.4em;
+margin: 0px 0px 20px 0px;
+padding: 5px;
+text-transform: none;
+}
+#comments-block .comment-body p {
+margin: 10px 0px 0px 0px;
+}
+.deleted-comment {
+color: gray;
+font-style: italic;
+}
+.comment-form {
+clear: both;
+margin-left: 58px;
+max-width: 680px;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.feed-links {
+clear: both;
+display: none;
+}
+#searchform input {
+border: 1px dashed #CDCDCD;
+border-right: none;
+width: 169px;
+background: none;
+padding: 8px 10px 7px;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 14px;
+color: #666666;
+font-style: italic;
+float: left;
+margin-top: 1px;
+}
+#searchform input.submit {
+width: 70px;
+height: 39px;
+background: url(http://2.bp.blogspot.com/_A_BXOSXle0Y/THCzVEfv4nI/AAAAAAAABBk/Yig40IgcI94/s1600/bk_but_search.jpg) 0 0 no-repeat;
+border: none;
+padding: 0;
+margin-top: -2px;
+}
+.rightBoxBottom {
+height: 5px;
+width: 280px;
+background: url(http://2.bp.blogspot.com/_A_BXOSXle0Y/THCzbxD0-mI/AAAAAAAABEE/74yhBTj9MUs/s1600/bk_box_bottom_right.png) 0 0 no-repeat;
+}
+.rightBox .rightBoxMid {
+padding: 50px 20px 25px;
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzc0OKP8I/AAAAAAAABEc/yLxI5RyiobM/s1600/bk_box_mid_right.png) 0 0 repeat-y;
+position: relative;
+}
+.rightBoxMidSearch {
+padding: 6px 10px 5px;
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzc0OKP8I/AAAAAAAABEc/yLxI5RyiobM/s1600/bk_box_mid_right.png) 0 0 repeat-y;
+overflow: hidden;
+margin: 0px 0px 0px 0px;
+}
+.rightBox {
+margin-bottom: 10px;
+}
+.rightBoxTop {
+height: 5px;
+width: 280px;
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzc0OKP8I/AAAAAAAABEc/yLxI5RyiobM/s1600/bk_box_mid_right.png) 0 0 no-repeat;
+}
+.rightBoxBottom {
+height: 5px;
+width: 280px;
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzc0OKP8I/AAAAAAAABEc/yLxI5RyiobM/s1600/bk_box_mid_right.png) 0 0 no-repeat;
+}
+.rightBox .rightBoxMid {
+padding: 50px 20px 25px;
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzc0OKP8I/AAAAAAAABEc/yLxI5RyiobM/s1600/bk_box_mid_right.png) 0 0 repeat-y;
+position: relative;
+}
+.rightBox .rightBoxMidSearch {
+padding: 6px 10px 5px;
+background: url(http://4.bp.blogspot.com/_A_BXOSXle0Y/THCzc0OKP8I/AAAAAAAABEc/yLxI5RyiobM/s1600/bk_box_mid_right.png) 0 0 repeat-y;
+overflow: hidden;
+}
+.rightBox .rightBoxMid ul li{
+border-bottom: 1px solid #E2E2D8;
+}
+.sidebar {
+color: #666666;
+line-height: 1.5em;
+}
+.sidebar ul {
+list-style: none;
+margin: 0 0 0;
+padding: 0 0 0;
+}
+.sidebar li {
+line-height: 2em;
+padding-left: 15px;
+}
+.sidebar .widget {
+background: #FFF;
+width: 270px;
+border: 2px solid #EBEBEB;
+margin: 0px 0px 15px 0px;
+}
+.sidebar .widget-content{
+margin: 10px 0px 15px 0px;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #cccccc;
+}
+.profile-data {
+margin: 0;
+text-transform: uppercase;
+letter-spacing: .1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+font-weight: bold;
+line-height: 1.6em;
+}
+.profile-datablock {
+margin: .5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+.profile-link {
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+text-transform: uppercase;
+letter-spacing: .1em;
+}
+.bt-credit{
+opacity: .35;
+filter: alpha(opacity=35);
+-ms-filter: "alpha(opacity=35)";
+-khtml-opacity: .35;
+-moz-opacity: .35;
+margin: -12px 10px 0px 0px;
+float: right;
+}
+#footer-bg {
+background: url(http://1.bp.blogspot.com/_A_BXOSXle0Y/THCzWELaLfI/AAAAAAAABB0/BcpjvwPrjvA/s1600/bk_footer.jpg) repeat-x scroll 0 0 #000000;
+margin-top: 15px;
+min-width: 960px;
+padding-bottom: 25px;
+}
+#footer-wrapper {
+padding-top: 30px;
+color: #797979;
+width: 960px;
+margin: 0 auto;
+padding-bottom: 40px;
+}
+.footer {
+float: left;
+width: 295px;
+padding-right: 25px;
+}
+.footer h2 {
+color: #CCCCCC;
+font-size: 17px;
+margin-bottom: 7px;
+padding: 7px 0 14px 8px;
+border-bottom: 1px solid #363636;
+}
+.footer ul li {
+background: url(http://3.bp.blogspot.com/_A_BXOSXle0Y/THCzatDCFtI/AAAAAAAABDk/2JQgpo3c7bM/s1600/star.png) 0 11px no-repeat;
+padding: 8px 6px 10px 18px;
+}
+.footer .widget-content {
+margin-top: 10px;
+}
+.footer ul li a {
+color: #797979;
+text-decoration: none;
+}
+#site5bottom {
+position: absolute;
+right: 5px;
+top: 13px;
+}
+#site5bottom img {
+border: none;
+}
+#copyright {
+border-top: 1px solid #1D1D1D;
+background: #000;
+}
+#copyrightInner {
+width: 960px;
+margin: 0 auto;
+font-size: 11px;
+color: #515151;
+padding: 20px 0;
+position: relative;
+}
+#copyright a {
+text-decoration: none;
+}
+#credits_left {
+float: left;
+padding-left: 0;
+padding-bottom: 20px;
+}
+#credits_right {
+float: right;
+padding-left: 25px;
+padding-bottom: 20px;
+}
+
+--></style>
+<script type="text/javascript">var a=navigator,b="userAgent",c="indexOf",f="&m=1",g="(^|&)m=",h="?",k="?m=1";function l(){var d=window.location.href,e=d.split(h);switch(e.length){case 1:return d+k;case 2:return 0<=e[1].search(g)?null:d+f;default:return null}}if(-1!=a[b][c]("Mobile")&&-1!=a[b][c]("WebKit")&&-1==a[b][c]("iPad")||-1!=a[b][c]("Opera Mini")||-1!=a[b][c]("IEMobile")){var m=l();m&&window.location.replace(m)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><script src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/google_top_exp.js" type="text/javascript"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style><script src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/jquery.js" type="text/javascript"></script></head>
+<body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/navbar.htm" name="navbar-iframe" id="navbar-iframe" vspace="0" tabindex="0" style="" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script gapi_processed="true" type="text/javascript" src="navbar_data/plusone.js"></script>
+<script type="text/javascript">
+        gapi.load("iframes-styles-bubble", function() {
+          if (window.iframes && iframes.open) {
+            iframes.open(
+                '//www.blogger.com/navbar.g?targetBlogID\0755666002681854029089\46blogName\75Lanza+C%C3%B3digos\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75BLUE\46layoutType\75LAYOUTS\46searchRoot\75http://lanzacodigos.blogspot.com/search\46blogLocale\75es\46v\0752\46homepageUrl\75http://lanzacodigos.blogspot.com/\46targetPostID\0752709254378083056696\46blogPostOrPageUrl\75http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html\46vt\75-7664252000901178642',
+                {
+                  container: "navbar-iframe-container",
+                  id: "navbar-iframe"
+                },
+                {
+                });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id="outer-wrapper">
+<div id="header-wrapper">
+<div class="header section" id="header"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://lanzacodigos.blogspot.com/">Lanza Códigos</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>Códigos en java, c++</span></p>
+</div>
+</div>
+</div></div>
+<div class="ddsmoothmenu" id="topMenu">
+<div class="section" id="tmenu">
+</div>
+</div>
+<div id="socialLinks">
+<a class="linkedin" href="#Your%20Linked%20In%20URL" title="Join us on LinkedIn!">Join us on LinkedIn!</a>
+<a class="facebook" href="#Your%20Facebook%20URL" title="Join us on Facebook!">Join us on Facebbook!</a>
+<a class="twitter" href="#Your%20Twitter%20URL" title="Follow Us on Twitter!">Follow Us on Twitter!</a>
+<a class="rss" href="http://lanzacodigos.blogspot.com/feeds/posts/default" title="RSS">Subscribe to our RSS Feed!</a>
+</div>
+</div>
+<div id="content-wrapper">
+<div id="main-wrapper">
+<div class="main section" id="main"><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+
+        <div class="date-outer">
+      
+
+        <div class="date-posts">
+      
+<div class="post-outer">
+<div class="postBoxTop"></div>
+<div class="post hentry uncustomized-post-template">
+<a name="2709254378083056696"></a>
+<div class="date">
+<script type="text/javascript">
+  var timestamp = "domingo, octubre 10, 2010";
+  if (timestamp != '') {
+	var timesplit = timestamp.split(",");
+	var date_yyyy = timesplit[2];
+	var timesplit = timesplit[1].split(" ");
+	var date_dd = timesplit[2];
+	var date_mmm = timesplit[1].substring(0, 3);
+	}
+  </script>
+<script type="text/javascript">document.write(date_dd);</script>10<br>
+<span class="day">
+<script type="text/javascript">document.write(date_mmm);</script>oct
+</span>
+<br>
+</div>
+<div class="post-labels">
+Etiquetas:
+<a href="http://lanzacodigos.blogspot.com/search/label/Java" rel="tag">Java</a>
+</div>
+<h3 class="post-title entry-title">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html">Reportes en java con JasperReports y iReports</a>
+</h3>
+<div class="post-header">
+<div class="post-header-line-1">
+</div>
+</div>
+<div class="post-body entry-content">
+Con motivo de estreno de este nuevo blog y además con un objetivo de 
+facilitar mucho la programación en cuanto a generar reportes, aquí va un
+ tutorial que les será de gran ayuda.<br>
+<br>
+En lo que nos centraremos en este tutorial es en la creación de un 
+reporte en formato PDF, previamente diseñando una plantilla mediante 
+iReport. Se usará una lista enlazada (<a href="http://download.oracle.com/javase/1.4.2/docs/api/java/util/LinkedList.html" target="_blank">LinkedList</a>) como origen de los datos a mostrar y se trabajará en el entorno <a href="http://netbeans.org/" target="_blank">NetBeans</a>.<br>
+<br>
+Primero necesitaremos de lo siguiente:<br>
+- <a href="http://jasperforge.org/plugins/project/project_home.php?projectname=jasperreports" target="_blank">JasperReports</a><br>
+- <a href="http://jasperforge.org/projects/ireport" target="_blank">iReport</a> (diseñador gráfico de plantillas para JasperReports)<br>
+NOTA: Es recomendable usar la misma versión de JasperReports que la de 
+iReports caso contrario pueden dar errores el ejecutar el programa.<br>
+<br>
+<b>Configuración de NetBeans</b><br>
+<br>
+Configuraremos NetBeans para que nos permita usar todas las librerías de JasperReports en nuestros proyectos.<br>
+<br>
+Primero descomprimimos el archivo que descargamos de JasperReports, pues
+ usaremos varias de sus librerías localizadas en las carpetas <i>dist</i> y <i>lib</i>.<br>
+<br>
+Iremos al menú Herramientas – Bibliotecas.<br>
+<a href="http://lh6.ggpht.com/_2VS9a5p08fM/TLFZKrYeh7I/AAAAAAAAAEE/viahxNX1GF8/s1600-h/toolsmenu%5B2%5D.png"><img alt="toolsmenu" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/toolsmenu_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="toolsmenu" border="0" height="230" width="244"></a> <br>
+<br>
+Creamos una nueva Biblioteca de nombre JasperReports (aunque puedes elegir el nombre que desees).<br>
+<a href="http://lh4.ggpht.com/_2VS9a5p08fM/TLFZMxzPO8I/AAAAAAAAAEM/w9mxhCSvLiQ/s1600-h/newlibrary%5B2%5D.png"><img alt="newlibrary" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/newlibrary_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="newlibrary" border="0" height="189" width="244"></a> <br>
+<br>
+En la parte derecha damos presionamos en “Agregar archivo JAR/Carpeta…” 
+para agregar los siguientes archivos (ubicados en las carpetas <i>lib</i> y <i>dist</i> de JasperReports como mencionamos anteriormente):<br>
+<br>
+<ul><li>- jasperreports-3.7.5.jar </li>
+<li>- jasperreports-javaflow-3.7.5.jar </li>
+<li>- commons-beanutils-1.8.0.jar </li>
+<li>- commons-collections-2.1.1.jar </li>
+<li>- commons-digester-1.7.jar </li>
+<li>- commons-javaflow-10060411.jar </li>
+<li>- iText-2.1.7.jar </li>
+<li>- png-encoder-1.5.jar </li>
+<li>- poi-3.6.jar </li>
+<li>- commons-logging-1.0.4.jar </li>
+<li>- groovy-all-1.5.5.jar </li>
+</ul><br>
+Con esto bastará solo agregar la biblioteca JasperReports (o el nombre 
+que le hayamos puesto) al proyecto en el cual deseemos generar reportes.<br>
+<br>
+<b>Creación de un nuevo proyecto de prueba</b><br>
+<br>
+Lo que se realizará es un ejemplo de una clase Empleado que dispone de una cédula, un nombre y el sueldo.<br>
+<br>
+Primero vamos al menú Archivo – Nuevo Proyecto – Java – Aplicación Java.<br>
+<a href="http://lh5.ggpht.com/_2VS9a5p08fM/TLFZRUD2tiI/AAAAAAAAAEU/qZkpabr8mW0/s1600-h/selectproject%5B2%5D.png"><img alt="selectproject" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/selectproject_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="selectproject" border="0" height="169" width="244"></a> <br>
+<br>
+Al proyecto le pondremos de nombre “ReporteEmpleados”.<br>
+<br>
+Ahora creamos una nueva clase a la cual llamaremos Empleado.<br>
+<a href="http://lh3.ggpht.com/_2VS9a5p08fM/TLFZWQvsG0I/AAAAAAAAAEc/Pt-1TXsA4qo/s1600-h/new%20class%5B2%5D.png"><img alt="new class" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/new%2520class_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="new class" border="0" height="115" width="244"></a> <br>
+<br>
+Le añadimos todos los Setters y Getters correspondientes además del constructor, quedando al final como sigue:<br>
+<a href="http://4.bp.blogspot.com/_2VS9a5p08fM/TLFjSMibKPI/AAAAAAAAAGY/1RzIaLcH52M/s1600/empleadoclasscode.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/empleadoclasscode.png" border="0" height="214" width="320"></a><br>
+Tenemos lo básico, ahora diseñaremos el reporte con iReport<br>
+<br>
+<b>Diseño de la plantilla con iReport</b><br>
+<br>
+Una vez abierto iReport, para crear una nueva plantilla nos dirigimos al
+ menú Archivo – New. En la nueva ventana elegimos “Blank A4” y 
+presionamos en “Open this template”.<br>
+<br>
+<a href="http://lh4.ggpht.com/_2VS9a5p08fM/TLFZZv2EEyI/AAAAAAAAAEs/dMiItFolR1I/s1600-h/new%20report%20dlg%5B2%5D.png"><img alt="new report dlg" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/new%2520report%2520dlg_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="new report dlg" border="0" height="184" width="244"></a><br>
+<br>
+Damos un nombre a nuestro reporte, dejaremos de momento el que trae por defecto “report1”.<br>
+<br>
+Dispondremos de 8 secciones en nuestro reporte:<br>
+- Title: Para colocar el título del reporte, irá en la primera página.<br>
+- Page Header: Una cabecera que irá en cada página<br>
+- Column Header: Las etiquetas de las cabeceras de cada columna.<br>
+- Detail 1: Los datos en sí del reporte.<br>
+- Column Footer: Para colocar información al final de los datos.<br>
+- Page Footer: Sección inferior de la página.<br>
+- Summary<br>
+- Background: Un fondo<br>
+<br>
+Ahora nos dispondremos a añadir información, en la parte derecha 
+encontraremos la paleta de elementos que podremos agregar (si no aparece
+ ir al menú Ventana – Paleta).<br>
+<br>
+Para el título seleccionamos “Static Text” y lo arrastramos a la sección
+ “Title”. Una vez que el elemento esté en la página, si le damos doble 
+clic podremos cambiar su texto, además de la fuente, el tamaño, entre 
+otros.<br>
+<br>
+<a href="http://1.bp.blogspot.com/_2VS9a5p08fM/TLFjixElQPI/AAAAAAAAAGg/6vw4lqau0PI/s1600/title+ready.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/titleready.png" border="0" height="206" width="320"></a><br>
+<br>
+Ahora añadimos las columnas de los datos que vamos a mostrar, o sea 
+añadimos más “Static Text” para indicar la cédula, el nombre y el 
+sueldo.<br>
+<br>
+<a href="http://4.bp.blogspot.com/_2VS9a5p08fM/TLFjr-defzI/AAAAAAAAAGk/_E25CQH9EBY/s1600/ready+column+header.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/readycolumnheader.png" border="0" height="205" width="320"></a><br>
+<br>
+Ahora estamos listos para añadir campos donde irán los datos, mucha atención a lo siguiente…<br>
+Anteriormente añadimos texto estático (que no cambia) pero los datos de 
+cada empleado como sabemos cambia, no serán los mismos, entonces 
+necesitaremos de un campo dinámico.<br>
+<br>
+Los campos dinámicos tenemos varios como son:<br>
+- Fields: Sirven para mostrar información provenientes de un DataSource (que puede ser una base de datos o una lista ligada).<br>
+- Variables: Muestran información del reporte o cálculos. Las variables disponibles las puedes encontrar <a href="http://jasperreports.sourceforge.net/api/net/sf/jasperreports/engine/JRVariable.html" target="_blank">aquí</a>.<br>
+- Parámetros: Son datos que por lo general son pasados desde el 
+programa. Algunos de los parámetros solo se pueden leer y no modificar, <a href="http://jasperreports.sourceforge.net/api/net/sf/jasperreports/engine/JRParameter.html" target="_blank">aquí</a> la lista completa.<br>
+<br>
+Nosotros usaremos Fields, entonces en la parte izquierda de iReport damos clic derecho sobre Fields y elegimos Agregar Field.<br>
+<a href="http://lh6.ggpht.com/_2VS9a5p08fM/TLFZfX1z05I/AAAAAAAAAFE/Ob6bRK247S4/s1600-h/add%20field%5B2%5D.png"><img alt="add field" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/add%2520field_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="add field" border="0" height="189" width="244"></a><br>
+<br>
+Cada Field tiene un tipo de dato que por defecto es String, pero en 
+nuestro caso donde el sueldo es de tipo Integer, entonces elegimos 
+java.lang.Integer como Field Class en las propiedades del Field.<br>
+<a href="http://lh5.ggpht.com/_2VS9a5p08fM/TLFZgw9UCHI/AAAAAAAAAFM/XrLq7MpBAUc/s1600-h/select%20integer%5B2%5D.png"><img alt="select integer" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/select%2520integer_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="select integer" border="0" height="178" width="244"></a><br>
+<br>
+Ahora arrastramos cada field hacia “Detail 1”. Seguramente en la sección
+ “Column Header” de la hoja se te crearon más etiquetas, las puedes 
+eliminar tranquilamente. Además debes achicar la altura de “Detail 1” 
+puesto que ese espacio es el que usará una sola fila y por el que viene 
+por defecto es bastante grande. Una vez realizado estos cambios el 
+resultado podría quedar como sigue:<br>
+<br>
+<a href="http://2.bp.blogspot.com/_2VS9a5p08fM/TLFjyhCCcqI/AAAAAAAAAGo/nFEbUMAEvHk/s1600/detail1+ready.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/detail1ready.png" border="0" height="190" width="320"></a><br>
+<br>
+Y aunque no lo creas, ya tenemos lista nuestra plantilla, sencillita por
+ cierto, pero a la final la creamos nosotros mismos. Ahora solo damos 
+clic en Preview:<br>
+<br>
+<a href="http://3.bp.blogspot.com/_2VS9a5p08fM/TLFj4fnWI-I/AAAAAAAAAGs/QzJt6qa_OTg/s1600/preview.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/preview.png" border="0" height="190" width="320"></a><br>
+<br>
+Esto compilará la plantilla para generar el archivo report1.jasper el 
+cual es el que haremos referencia en el código. Dicho archivo lo debemos
+ colocar en la raíz de nuestro proyecto.<br>
+<br>
+Nos aparece los datos como “null” debido a que no existe una fuente de 
+información (un DataSource), pero no te preocupes que en nuestro 
+programa lo vamos a indicar.<br>
+<br>
+<b>Completando el ejemplo de la clase Empleado</b><br>
+<br>
+Habíamos dejado solo definida la clase Empleado con sus atributos y 
+métodos respectivos, ahora estamos listos para crear el reporte.<br>
+<br>
+Primero damos clic derecho a la carpeta “Bibliotecas” de nuestro proyecto, elegimos “Agregar Biblioteca”.<br>
+<a href="http://lh6.ggpht.com/_2VS9a5p08fM/TLFZk8opuTI/AAAAAAAAAFk/mHSejkToFZc/s1600-h/addnewlibrary%5B2%5D.png"><img alt="addnewlibrary" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/addnewlibrary_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="addnewlibrary" border="0" height="169" width="244"></a><br>
+De la lista de bibliotecas, seleccionamos el que habíamos creado, o sea “JasperReports”.<br>
+<a href="http://lh3.ggpht.com/_2VS9a5p08fM/TLFZmLlJ11I/AAAAAAAAAFs/b4g55coR29U/s1600-h/jasperreportsselected%5B2%5D.png"><img alt="jasperreportsselected" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/jasperreportsselected_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="jasperreportsselected" border="0" height="244" width="222"></a><br>
+<br>
+En el main de nuestro proyecto añadiremos el siguiente código<br>
+<br>
+<span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;">LinkedList&lt;Empleado&gt; listaEmpleados = new LinkedList&lt;Empleado&gt;(); </span></span><br>
+<span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;">listaEmpleados.add(new Empleado("1234567890", "Juan Pérez", 450));     </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> listaEmpleados.add(new Empleado("0987654321", "Marcelo C", 500));      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> listaEmpleados.add(new Empleado("1234509876", "Don Bill", 5000)); </span></span><br>
+<span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;">try     </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> {      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> &nbsp;&nbsp;&nbsp; JasperReport reporte = (JasperReport) JRLoader.loadObject("report1.jasper"); </span></span><br>
+<span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;">&nbsp;&nbsp;&nbsp;
+ JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, null, 
+new JRBeanCollectionDataSource(listaEmpleados)); </span></span><br>
+<span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;">&nbsp;&nbsp;&nbsp; JRExporter exporter = new JRPdfExporter(); </span></span><br>
+<span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;">&nbsp;&nbsp;&nbsp; exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);     </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> &nbsp;&nbsp;&nbsp; exporter.setParameter(JRExporterParameter.OUTPUT_FILE, new java.io.File("reporteEnPdf.pdf"));      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> &nbsp;&nbsp;&nbsp; exporter.exportReport();      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> }      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> catch(JRException e)      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> {      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> &nbsp;&nbsp;&nbsp; e.printStackTrace();      </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"><br>
+</span><span style="font-size: small;"> </span></span><span style="font-family: &quot;Courier New&quot;, &quot;Courier&quot;, monospace;"><span style="font-size: small;"> }</span></span> <br>
+<br>
+Seguramente al pegar el código faltarán algunos imports, esto se 
+soluciona dando clic derecho sobre el código que da error y eligiendo 
+“Reparar importaciones”.<br>
+<a href="http://lh6.ggpht.com/_2VS9a5p08fM/TLFZnQ0PcgI/AAAAAAAAAF0/YwlJhyeWYQE/s1600-h/fiximports%5B2%5D.png"><img alt="fiximports" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/fiximports_thumb.png" style="border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline;" title="fiximports" border="0" height="122" width="244"></a><br>
+<br>
+<div align="left">Ahora si ejecutamos el programa (presionando F6 en NetBeans) y… ¡voilá! tenemos nuestro reporte en PDF, excelente ¿no?.</div><div align="left"><a href="http://3.bp.blogspot.com/_2VS9a5p08fM/TLFeX8zhOWI/AAAAAAAAAGM/1uGWJzXpUHM/s1600/reportepdf.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/reportepdf.png" border="0" height="190" width="320"></a></div><div align="left">Para cualquier duda o sugerencia, la puedes dejar en los comentarios.</div>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<div class="metaRight">
+<span class="post-author vcard">
+Publicado por
+<span class="fn">Tukero</span>
+</span>
+<span class="post-comment-link">
+</span>
+</div>
+<div class="post-share-buttons">
+<a class="share-button sb-email" href="http://www.blogger.com/share-post.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;target=email" target="_blank" title="Enviar por correo electrónico">
+<span class="share-button-link-text">Enviar por correo electrónico</span></a>
+<a class="share-button sb-blog" href="http://www.blogger.com/share-post.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;target=blog" onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target="_blank" title="Escribe un blog">
+<span class="share-button-link-text">Escribe un blog</span></a>
+<a class="share-button sb-twitter" href="http://www.blogger.com/share-post.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;target=twitter" target="_blank" title="Compartir con Twitter">
+<span class="share-button-link-text">Compartir con Twitter</span></a>
+<a class="share-button sb-facebook" href="http://www.blogger.com/share-post.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;target=facebook" onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target="_blank" title="Compartir con Facebook">
+<span class="share-button-link-text">Compartir con Facebook</span></a>
+<a class="share-button sb-buzz" href="http://www.blogger.com/share-post.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;target=buzz" onclick='window.open(this.href, "_blank", "height=415,width=690"); return false;' target="_blank" title="">
+<span class="share-button-link-text">
+</span></a>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="post-icons">
+<span class="item-control blog-admin pid-325839439">
+<a href="http://www.blogger.com/post-edit.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;from=pencil" title="Editar entrada">
+<img alt="" class="icon-action" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon18_edit_allbkg.gif" height="18" width="18">
+</a>
+</span>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"></div>
+</div>
+<span class="post-location">
+</span>
+</div>
+<div class="postBoxBottom"></div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>
+14
+comentarios:
+        
+</h4>
+<div class="pid-325839439" id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+<dt class="comment-author " id="c5347601639744854034">
+<a name="c5347601639744854034"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/14659713818722477713" rel="nofollow" onclick="" class="avatar-hovercard" id="av-0-14659713818722477713"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="jessica arelly" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/14659713818722477713" rel="nofollow">jessica arelly</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-5347601639744854034">
+<p>
+ola yo estoy haciendo reportes con iReport en ambiente web, hasta ahora 
+todo va bien pero ¿como le puedo hacer para que cambie el titulo del 
+reporte dinamicamente? dependiendo de un parametro que le envio.
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1303860937206#c5347601639744854034" title="comment permalink">
+26 de abril de 2011 18:35
+</a>
+<span class="item-control blog-admin pid-531667939">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=5347601639744854034" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c1926783616676514097">
+<a name="c1926783616676514097"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/03985696048582297544" rel="nofollow" onclick="" class="avatar-hovercard" id="av-1-03985696048582297544"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="Martin Balog" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/03985696048582297544" rel="nofollow">Martin Balog</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-1926783616676514097">
+<p>
+Hola en primer medida te felicito por el tuto, tengo un inconveniente no
+ hay forma de q me funcione en la linea JasperReport reporte = 
+(JasperReport) JRLoader.loadObject("report1.jasper"); <br>Cuando hago el
+ paso por paso de esa linea pasa al final, no se que puede suceder. 
+Probe colocando la ruta completa donde esta almacenado el archivo y 
+tampoco funciona. Si tenes idea cual es el inconveniente desde ya te lo 
+agradeceria toda la ayuda que me podes suministrar.
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1320960963983#c1926783616676514097" title="comment permalink">
+10 de noviembre de 2011 16:36
+</a>
+<span class="item-control blog-admin pid-1747695945">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=1926783616676514097" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c5997551021461343328">
+<a name="c5997551021461343328"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/05496508190094564730" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2-05496508190094564730"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="esteban" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/05496508190094564730" rel="nofollow">esteban</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-5997551021461343328">
+<p>
+si es verdad a mi tambien me genera error esa linea quisiera saber que 
+puedo hacer lo que sucede es que tengo que entregar una aplicacion 
+mañana para programacion y pues eso es lo unico que me falta
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1323840492430#c5997551021461343328" title="comment permalink">
+14 de diciembre de 2011 00:28
+</a>
+<span class="item-control blog-admin pid-994237767">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=5997551021461343328" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c6989676391669327137">
+<a name="c6989676391669327137"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/17457884512930491632" rel="nofollow" onclick="" class="avatar-hovercard" id="av-3-17457884512930491632"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="lekio" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/17457884512930491632" rel="nofollow">lekio</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-6989676391669327137">
+<p>
+Hola, a ver si me puedes ayudar por favor. Imaginemos que he creado un 
+reporte parecido al tuyo, donde se va llenando con los datos de los 
+empleados. Pues bien una vez terminado de rellenar los datos de alumnos,
+ en la misma hoja porque los datos de los alumnos no ocupa mucho, quiero
+ poner los datos de..... digamos sucursales de bancos en la ciudad, como
+ veras no estan relacionados para nada unos datos con los anteriores, 
+pero no se como podria hacer para mostrarlos ya que no puedo agregar 
+otra banda de header columns para poner la cabecera de los datos. Muchas
+ gracias de antemano.
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1343153278455#c6989676391669327137" title="comment permalink">
+24 de julio de 2012 13:07
+</a>
+<span class="item-control blog-admin pid-1189740638">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=6989676391669327137" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c4003008175121005597">
+<a name="c4003008175121005597"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/07091375063528667623" rel="nofollow" onclick="" class="avatar-hovercard" id="av-4-07091375063528667623"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="ilrojano" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/07091375063528667623" rel="nofollow">ilrojano</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-4003008175121005597">
+<p>
+hago este ejemplo y me sale el siguiente error, sabeis a que es debido:<br>net.sf.jasperreports.engine.JRException: Error retrieving field value from bean : Pasillo<br> at net.sf.jasperreports.engine.data.JRAbstractBeanDataSource.getBeanProperty(JRAbstractBeanDataSource.java:127)<br>Java Result: 1
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1349950387144#c4003008175121005597" title="comment permalink">
+11 de octubre de 2012 05:13
+</a>
+<span class="item-control blog-admin pid-2040359259">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=4003008175121005597" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c8625390765986659606">
+<a name="c8625390765986659606"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/06088061596135622817" rel="nofollow" onclick="" class="avatar-hovercard" id="av-5-06088061596135622817"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="giovanny" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/06088061596135622817" rel="nofollow">giovanny</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-8625390765986659606">
+<p>
+Saludos.<br>Mi tema de tesis es un sistema de facturación en java web y 
+para los reportes estoy trabajando con Jasper Ireports 4.0.2, despues de
+ tanto buscar en la web ya puedo generar el reporte de una factura con 
+su respectivo detalle.<br>Ahora necesito generar el reporte de varias facturas pero en el mismo archivo, como puedo hacer esto.<br>Ya
+ que para cada factura se me genera un solo archivo, y cuando genero las
+ facturas por ejemplo de la número 1 a la 5 se me abren 5 reportes.<br>como puedo hacer para que todo se me habra en un solo archivo o reporte, para poderlo imprimir.<br>Mi tambien como puedo enviar directamente a la impresora sin que se abra el reporte???<br><br>Espero que me puedan ayudar gracias.
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1355805656639#c8625390765986659606" title="comment permalink">
+17 de diciembre de 2012 23:40
+</a>
+<span class="item-control blog-admin pid-655188796">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=8625390765986659606" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c3108229951079679678">
+<a name="c3108229951079679678"></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/14566581887813708056" rel="nofollow" onclick="" class="avatar-hovercard" id="av-6-14566581887813708056"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/photo.png" alt="" class="delayLoad" style="" longdesc="//lh5.googleusercontent.com/-zFRc1n32QYw/AAAAAAAAAAI/AAAAAAAAADw/XDf3ROWIzU4/s512-c/photo.jpg" title="Julián Quiroz" height="35" width="35">
+
+<noscript><img src="//lh5.googleusercontent.com/-zFRc1n32QYw/AAAAAAAAAAI/AAAAAAAAADw/XDf3ROWIzU4/s512-c/photo.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href="http://www.blogger.com/profile/14566581887813708056" rel="nofollow">Julián Quiroz</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-3108229951079679678">
+<p>
+genial.. aun no lo he provado pero la explicación esta exelente... felicitaciones y es una herramienta muy buena gracias
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1357226937951#c3108229951079679678" title="comment permalink">
+3 de enero de 2013 10:28
+</a>
+<span class="item-control blog-admin pid-568775612">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=3108229951079679678" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c2096604021612639549">
+<a name="c2096604021612639549"></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/14566581887813708056" rel="nofollow" onclick="" class="avatar-hovercard" id="av-7-14566581887813708056"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/photo.png" alt="" class="delayLoad" style="" longdesc="//lh5.googleusercontent.com/-zFRc1n32QYw/AAAAAAAAAAI/AAAAAAAAADw/XDf3ROWIzU4/s512-c/photo.jpg" title="Julián Quiroz" height="35" width="35">
+
+<noscript><img src="//lh5.googleusercontent.com/-zFRc1n32QYw/AAAAAAAAAAI/AAAAAAAAADw/XDf3ROWIzU4/s512-c/photo.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href="http://www.blogger.com/profile/14566581887813708056" rel="nofollow">Julián Quiroz</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-2096604021612639549">
+<p>
+@Ilrojano<br><br>tengo la solución a tu problema por que ami me paso lo mismo...<br>y fue lo siguiente...<br><br>Es por que los nombres de las variables las pusiste en mayúsculas y van en minúsculas..<br><br>"Pasillo"<br><br>Debe
+ ir en minúsculas tanto en el documento.jasper y en las variables de la 
+clase que hiciste en netBeans el que usas como bean... y listo..<br><br>No se por que marca el error pero eso mismo e paso y cambie todo a minúsculas y funciono perfecto
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1357260447316#c2096604021612639549" title="comment permalink">
+3 de enero de 2013 19:47
+</a>
+<span class="item-control blog-admin pid-568775612">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=2096604021612639549" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c7581123899662482778">
+<a name="c7581123899662482778"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/06414244506908477788" rel="nofollow" onclick="" class="avatar-hovercard" id="av-8-06414244506908477788"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="gerardo" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/06414244506908477788" rel="nofollow">gerardo</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-7581123899662482778">
+<p>
+Hola, muy bueno e interesante tu blog. Fíjate que estoy desarrollando y tengo un problema en la generación de un reporte.<br><br>Necesito
+ que dicho reporte se ajuste a una sola hoja, como funciona en Excel, 
+que se le puede decir que se ajuste a una sola hoja y todo el contenido 
+del mismo se ajusta.<br><br>Espero me puedas ayudar. Gracias.
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1357762030194#c7581123899662482778" title="comment permalink">
+9 de enero de 2013 15:07
+</a>
+<span class="item-control blog-admin pid-209580772">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=7581123899662482778" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c2572169147611271927">
+<a name="c2572169147611271927"></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/04862247301013065322" rel="nofollow" onclick="" class="avatar-hovercard" id="av-9-04862247301013065322"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/IMG_1046.jpg" alt="" class="delayLoad" style="" longdesc="http://2.bp.blogspot.com/_Qx_Pi4qDpdg/SwIsFoVfIAI/AAAAAAAAAA0/yjWo8E5g8tI/S45/IMG_1046.jpg" title="David Lopez" height="35" width="35">
+
+<noscript><img src="http://2.bp.blogspot.com/_Qx_Pi4qDpdg/SwIsFoVfIAI/AAAAAAAAAA0/yjWo8E5g8tI/S45/IMG_1046.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href="http://www.blogger.com/profile/04862247301013065322" rel="nofollow">David Lopez</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-2572169147611271927">
+<p>
+Buenas noches!!!!!!! URGENTE! Tengo una duda, lo que necesito es que, el
+ tamaño de letra de los fields se autoajusten. Es decir, darle un 
+especio determinado a unos field, o por mas que tengan 100 datos, que el
+ tamaño se autoajuste al espacio que le eh dado, para que no me ocupe 
+mas de una hoja, asi la letra se vea chiquita no importa. O hacer q mi 
+subconsulta se auto ajuste a un espacio que ya le di. <br><br>De ante mano muchas gracias! me tiene como loco esto y tengo que entregarlo lo antes posible!
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1358327101971#c2572169147611271927" title="comment permalink">
+16 de enero de 2013 04:05
+</a>
+<span class="item-control blog-admin pid-1145460543">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=2572169147611271927" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c6157527792143814737">
+<a name="c6157527792143814737"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/09958982696091667822" rel="nofollow" onclick="" class="avatar-hovercard" id="av-10-09958982696091667822"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="Jesus Penas" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/09958982696091667822" rel="nofollow">Jesus Penas</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-6157527792143814737">
+<p>
+Hola Buenas tardes. He probado lo de crear un atchivo PDF y me graba un 
+archivo pdf correctamente. Pero y si quiero que el adobe lo deje abierto
+ en lugar de grabarlo, para que pueda escoger el nombre y la ubicacion?<br>Y
+ además tengo un problema, cuando imprimo reportes en una impresora 
+canon, me salen perfectos, pero ahora los estoy imprimiendo en una HP 
+desjet 3055A y me sale con letras grandes, como si pensase que tiene un 
+A·en horizonta, sinembargo si guardo el archivo en pdf y despues lo 
+imprimo, entonces sale bien. Alguna idea. Gracias
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1359732718931#c6157527792143814737" title="comment permalink">
+1 de febrero de 2013 10:31
+</a>
+<span class="item-control blog-admin pid-449127562">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=6157527792143814737" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c3329903125682933966">
+<a name="c3329903125682933966"></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/06289457434096125366" rel="nofollow" onclick="" class="avatar-hovercard" id="av-11-06289457434096125366"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/photo.jpg" alt="" class="delayLoad" style="" longdesc="//lh4.googleusercontent.com/-8YjO0cV4wk4/AAAAAAAAAAI/AAAAAAAAACA/GQGyHr6gbNw/s512-c/photo.jpg" title="David Silva" height="35" width="35">
+
+<noscript><img src="//lh4.googleusercontent.com/-8YjO0cV4wk4/AAAAAAAAAAI/AAAAAAAAACA/GQGyHr6gbNw/s512-c/photo.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href="http://www.blogger.com/profile/06289457434096125366" rel="nofollow">David Silva</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-3329903125682933966">
+<p>
+Lo que tienen que hacer es copiar los archivos creados al hacer el 
+reporte y llevarlos a NetBeansProjects y copiarlos. Osea, buscar los 
+archivos "report1.jasper" y el .jrxml que se produce al crear el reporte
+ en su ireport y pegarlos en el la carpeta que denante mencioné. Después
+ compilan en java y se crea el PDF, saludos
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1362749370877#c3329903125682933966" title="comment permalink">
+8 de marzo de 2013 08:29
+</a>
+<span class="item-control blog-admin pid-1455123616">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=3329903125682933966" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c2032819448614678376">
+<a name="c2032819448614678376"></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/05944698336593584845" rel="nofollow" onclick="" class="avatar-hovercard" id="av-12-05944698336593584845"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/cc4.jpg" alt="" class="delayLoad" style="" longdesc="http://3.bp.blogspot.com/_DakNVEXpeOs/SapKOyyPapI/AAAAAAAAABA/RjPeLDBXeXk/S45/cc4.jpg" title="Livio" height="35" width="35">
+
+<noscript><img src="http://3.bp.blogspot.com/_DakNVEXpeOs/SapKOyyPapI/AAAAAAAAABA/RjPeLDBXeXk/S45/cc4.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href="http://www.blogger.com/profile/05944698336593584845" rel="nofollow">Livio</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-2032819448614678376">
+<p>
+Hola, tengo el mismo problem que @Jesus Penas. Alguna idea? Los reportes
+ generados en una impresora Hp 3055A  salen con mucho zoom
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1369358370232#c2032819448614678376" title="comment permalink">
+23 de mayo de 2013 20:19
+</a>
+<span class="item-control blog-admin pid-1180886040">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=2032819448614678376" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+<dt class="comment-author " id="c1942858095401764056">
+<a name="c1942858095401764056"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/07788922126211558757" rel="nofollow" onclick="" class="avatar-hovercard" id="av-13-07788922126211558757"><img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/b16-rounded.gif" alt="" title="Isis" height="16" width="16">
+
+</a></span></div>
+<a href="http://www.blogger.com/profile/07788922126211558757" rel="nofollow">Isis</a>
+dijo...
+</dt>
+<dd class="comment-body " id="Blog1_cmt-1942858095401764056">
+<p>
+Que tal muchas gracias por el ejemplo, te comento que tengo un problema,
+ y quisiera saber si me podrías ayudar, cuando genero el reporte en 
+lugar de salirme los datos me produce: field1, field2, field3, en lugar 
+de mostrarme los datos de la cedula, del nombre y el sueldo, muchas 
+gracias por tu ayuda:D
+<span class="interaction-iframe-guide"></span>
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html?showComment=1375158855256#c1942858095401764056" title="comment permalink">
+29 de julio de 2013 23:34
+</a>
+<span class="item-control blog-admin pid-373511106">
+<a class="comment-delete" href="http://www.blogger.com/delete-comment.g?blogID=5666002681854029089&amp;postID=1942858095401764056" title="Eliminar comentario">
+<img src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<h4 id="comment-post-message">Publicar un comentario en la entrada</h4>
+<p>
+</p>
+<a href="http://www.blogger.com/comment-iframe.g?blogID=5666002681854029089&amp;postID=2709254378083056696&amp;blogspotRpcToken=9868723" id="comment-editor-src"></a>
+<iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" id="comment-editor" name="comment-editor" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/comment-iframe.htm" frameborder="0" height="274px" width="100%"></iframe>
+<script type="text/javascript" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/2373033623-comment_from_post_iframe.js"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('http://www.blogger.com/rpc_relay.html', '11048029649406436092');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+      </div></div>
+    
+<!-- google_ad_section_end -->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://lanzacodigos.blogspot.com/2010/11/grafico-pie-y-de-barras-con-jfreechart.html" id="Blog1_blog-pager-newer-link" title="Entrada más reciente">Entrada más reciente</a>
+</span>
+<a class="home-link" href="http://lanzacodigos.blogspot.com/">Página principal</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Suscribirse a:
+<a class="feed-link" href="http://lanzacodigos.blogspot.com/feeds/2709254378083056696/comments/default" target="_blank" type="application/atom+xml">Enviar comentarios (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id="sidebar-wrapper">
+<form action="/search" id="searchform" method="get">
+<div class="rightBox">
+<div class="rightBoxTop"></div>
+<div class="rightBoxMidSearch">
+<input id="s" name="q" type="text">
+<input class="submit" id="searchsubmit" value="" type="submit">
+</div>
+<div class="rightBoxBottom"></div>
+</div>
+</form>
+<div class="clear"></div>
+<div class="sidebar section" id="sidebar"><div class="widget LinkList" id="LinkList1">
+<h2>Enlaces</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://tukero.blogspot.com/">Tukero Blog</a></li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5666002681854029089&amp;widgetType=LinkList&amp;widgetId=LinkList1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target="configLinkList1" title="Editar">
+<img alt="" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" id="Label1">
+<h2>Labels</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://lanzacodigos.blogspot.com/search/label/JasperReports">JasperReports</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://lanzacodigos.blogspot.com/search/label/Java">Java</a>
+<span dir="ltr">(2)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5666002681854029089&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target="configLabel1" title="Editar">
+<img alt="" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+<!-- This heme comes under a Creative Commons license. {lease keep thecredit links intact which provides credit to its authors. -->
+<a class="bt-credit" href="http://www.bloggerthemes.net/" title="Free Blogger Templates"><img alt="Blogger Themes" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/blogger-themes.gif" border="0"></a>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class="clear"></div>
+</div>
+<!-- end content-wrapper -->
+</div>
+<div id="footer-bg">
+<div id="footer-wrapper">
+<div id="footer1">
+<div class="footer section" id="footer-1"></div>
+</div>
+<div id="footer2">
+<div class="footer section" id="footer-2"></div>
+</div>
+<div id="footer3">
+<div class="footer section" id="footer-3"><div class="widget BlogArchive" id="BlogArchive1">
+<h2>Blog Archive</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul>
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://lanzacodigos.blogspot.com/search?updated-min=2010-01-01T00:00:00-05:00&amp;updated-max=2011-01-01T00:00:00-05:00&amp;max-results=2">2010</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul>
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+          ►&nbsp;
+        
+</span>
+</a>
+<a class="post-count-link" href="http://lanzacodigos.blogspot.com/2010_11_01_archive.html">noviembre</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul>
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://lanzacodigos.blogspot.com/2010_10_01_archive.html">octubre</a>
+<span class="post-count" dir="ltr">(1)</span>
+<ul class="posts">
+<li><a href="http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html">Reportes en java con JasperReports y iReports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=5666002681854029089&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=footer-3" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target="configBlogArchive1" title="Editar">
+<img alt="" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+<div class="clear"></div>
+</div>
+<!--all tuts blogger theme comes under a Creative Commons license. They are free of charge to use as a theme for your blog and you can make changes to the templates to suit your needs. and please you must keep the footer credit links intact which provides credit to its authors.-->
+<div id="copyright">
+<div id="copyrightInner">
+<div id="credits_left">
+		© Copyright <a href="http://lanzacodigos.blogspot.com/">Lanza Códigos</a>
+</div>
+<div id="credits_right">
+		Design by<a href="http://www.site5.com/in.php?id=81811" title="site5"> site5 </a> Blogger Theme by<a href="http://www.bloggerthemes.net/" title="Blogger Themes"> Blogger Templates</a>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2679799-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/510665320-widgets.js"></script><iframe src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/blank.htm" style="height: 0px; width: 0px; position: absolute;" name="google_top_static_frame" id="google_top_static_frame" frameborder="0"></iframe>
+<script gapi_processed="true" type="text/javascript" src="navbar_data/plusone.js"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '5666002681854029089';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5666002681854029089','//lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html','5666002681854029089');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '5666002681854029089', 'bloggerUrl': 'http://www.blogger.com', 'title': 'Lanza Códigos', 'pageType': 'item', 'url': 'http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html', 'canonicalUrl': 'http://lanzacodigos.blogspot.com/2010/10/reportes-en-java-con-jasperreports-y.html', 'canonicalHomepageUrl': 'http://lanzacodigos.blogspot.com/', 'homepageUrl': 'http://lanzacodigos.blogspot.com/', 'blogspotFaviconUrl': 'http://lanzacodigos.blogspot.com/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'Reportes en java con JasperReports y iReports', 'pageTitle': 'Lanza Códigos: Reportes en java con JasperReports y iReports', 'encoding': 'UTF-8', 'locale': 'es', 'localeUnderscoreDelimited': 'es', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Lanza Códigos - Atom\42 href\75\42http://lanzacodigos.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Lanza Códigos - RSS\42 href\75\42http://lanzacodigos.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Lanza Códigos - Atom\42 href\75\42http://www.blogger.com/feeds/5666002681854029089/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Lanza Códigos - Atom\42 href\75\42http://lanzacodigos.blogspot.com/feeds/2709254378083056696/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'postImageThumbnailUrl': 'http://lh5.ggpht.com/_2VS9a5p08fM/TLFZMPjDgTI/AAAAAAAAAEI/Eu0VfpHxTlo/s72-c/toolsmenu_thumb.png?imgmax\75800', 'imageSrcTag': '\74link rel\75\42image_src\42 href\75\42http://lh5.ggpht.com/_2VS9a5p08fM/TLFZMPjDgTI/AAAAAAAAAEI/Eu0VfpHxTlo/s72-c/toolsmenu_thumb.png?imgmax\75800\42 /\76\n', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var b\75window,e\75\42jstiming\42,g\75\42tick\42;(function(){function d(a){this.t\75{};this.tick\75function(a,d,c){c\75void 0!\75c?c:(new Date).getTime();this.t[a]\75[c,d]};this[g](\42start\42,null,a)}var a\75new d;b.jstiming\75{Timer:d,load:a};if(b.performance\46\46b.performance.timing){var a\75b.performance.timing,c\75b[e].load,f\75a.navigationStart,a\75a.responseStart;0\74f\46\46a\76\75f\46\46(c[g](\42_wtsrt\42,void 0,f),c[g](\42wtsrt_\42,\42_wtsrt\42,a),c[g](\42tbsd_\42,\42wtsrt_\42))}try{a\75null,b.chrome\46\46b.chrome.csi\46\46(a\75Math.floor(b.chrome.csi().pageT),c\46\0460\74f\46\46(c[g](\42_tbnd\42,void 0,b.chrome.csi().startE),\nc[g](\42tbnd_\42,\42_tbnd\42,f))),null\75\75a\46\46b.gtbExternal\46\46(a\75b.gtbExternal.pageT()),null\75\75a\46\46b.external\46\46(a\75b.external.pageT,c\46\0460\74f\46\46(c[g](\42_tbnd\42,void 0,b.external.startE),c[g](\42tbnd_\42,\42_tbnd\42,f))),a\46\46(b[e].pt\75a)}catch(l){}})();b.tickAboveFold\75function(d){var a\0750;if(d.offsetParent){do a+\75d.offsetTop;while(d\75d.offsetParent)}d\75a;750\76\75d\46\46b[e].load[g](\42aft\42)};var h\75!1;function k(){h||(h\75!0,b[e].load[g](\42firstScrollTime\42))}b.addEventListener?b.addEventListener(\42scroll\42,k,!1):b.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/15de8d1bfc9ff1d1', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'skin', 'data': {'vars': {}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'footer-3', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': '//www.blogger.com/static/v1/jsbin/3314004876-lbx__es.js', 'lightboxCssUrl': '//www.blogger.com/static/v1/v-css/4138445517-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'null', null, document.getElementById('PageList1'), {'title': 'Páginas', 'links': [{'href': 'http://lanzacodigos.blogspot.com/', 'title': 'Página principal', 'isCurrentPage': false}], 'mobile': false}, 'displayModeFull'));
+</script>
+
+<iframe src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/a.htm" style="position: absolute; top: -999px; left: -999px; visibility: hidden;"></iframe><link href="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/4138445517-lightbox_bundle.css" rel="stylesheet" type="text/css"><script src="Reportes%20en%20java%20con%20JasperReports%20y%20iReports_files/3314004876-lbx__es.js" type="text/javascript"></script></body></html>

@@ -30,7 +30,11 @@ public class JPanelFondo4 extends javax.swing.JPanel {
     public void paintComponent(Graphics g){
     
     Dimension tam=getSize();
+<<<<<<< HEAD
     ImageIcon ImagenFondo=new ImageIcon(new ImageIcon(getClass().getResource("/AImagenesSanJose/eje5.gif")).getImage());
+=======
+    ImageIcon ImagenFondo=new ImageIcon(new ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/eje5.gif")).getImage());
+>>>>>>> elizabeth/master
     g.drawImage(ImagenFondo.getImage(), 0,0 , tam.width,tam.height,null);
     setOpaque(false);
     super.paintComponent(g);

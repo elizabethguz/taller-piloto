@@ -1,9 +1,13 @@
 
 /* Programa: Triqui en java
+<<<<<<< HEAD
  * Ingenieria de sistemas
  * version 1.0
  * Desarrolladores:
  * DINA VILLEGAS BALANDRA
+=======
+ 
+>>>>>>> elizabeth/master
  *
  * Clase principal que ejecutara el programa
  * Descripcion: jugar al clasico 3 en raya o triqui contra el ordenador.
@@ -28,9 +32,15 @@ public class Triqui extends JFrame implements ActionListener{
 
     public Triqui(){
 
+<<<<<<< HEAD
         super("ENTRETENIMIENTO SAN JOSE -->> Dina Villegas");
 
         botonMatriz = new JButton[3][3]; 
+=======
+        super("Triqui");
+
+        botonMatriz = new JButton[3][3];
+>>>>>>> elizabeth/master
         jugadorPC = new JugadorPC();
 
         this.getContentPane().add(creaPanelBotones(), BorderLayout.CENTER);
@@ -91,7 +101,11 @@ public class Triqui extends JFrame implements ActionListener{
                         if(botonMatriz[f][c].getText().equals(marca1)){
                             aux1++;
                             if(aux1==3){
+<<<<<<< HEAD
                                JOptionPane.showMessageDialog(this,"Diagonal Principal Llena Ganas ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                               JOptionPane.showMessageDialog(this,"Diagonal Principal Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                                this.limpiarTablero();
                             }
                         }
@@ -123,7 +137,11 @@ public class Triqui extends JFrame implements ActionListener{
                         if(botonMatriz[f][c].getText().equals(marca1)){
                             aux1++;
                             if(aux1==3){
+<<<<<<< HEAD
                                JOptionPane.showMessageDialog(this,"Diagonal Secundaria Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                               JOptionPane.showMessageDialog(this,"Diagonal Secundaria Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                                this.limpiarTablero();
                             }
                         }
@@ -151,7 +169,11 @@ public class Triqui extends JFrame implements ActionListener{
                 if(botonMatriz[0][c].getText().equals(marca1)){
                     aux1++;
                     if(aux1==3){
+<<<<<<< HEAD
                        JOptionPane.showMessageDialog(this,"Fila Superior Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                       JOptionPane.showMessageDialog(this,"Fila Superior Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                        this.limpiarTablero();
                     }
                 }
@@ -177,7 +199,11 @@ public class Triqui extends JFrame implements ActionListener{
                 if(botonMatriz[1][c].getText().equals(marca1)){
                     aux1++;
                     if(aux1==3){
+<<<<<<< HEAD
                        JOptionPane.showMessageDialog(this,"Fila Media Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                       JOptionPane.showMessageDialog(this,"Fila Media Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                        this.limpiarTablero();
                     }
                 }
@@ -203,7 +229,11 @@ public class Triqui extends JFrame implements ActionListener{
                 if(botonMatriz[2][c].getText().equals(marca1)){
                     aux1++;
                     if(aux1==3){
+<<<<<<< HEAD
                        JOptionPane.showMessageDialog(this,"Fila Inferior Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                       JOptionPane.showMessageDialog(this,"Fila Inferior Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                        this.limpiarTablero();
                     }
                 }
@@ -229,7 +259,11 @@ public class Triqui extends JFrame implements ActionListener{
                 if(botonMatriz[f][0].getText().equals(marca1)){
                     aux1++;
                     if(aux1==3){
+<<<<<<< HEAD
                        JOptionPane.showMessageDialog(this,"Columna Izquierda Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                       JOptionPane.showMessageDialog(this,"Columna Izquierda Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                        this.limpiarTablero();
                     }
                 }
@@ -255,7 +289,11 @@ public class Triqui extends JFrame implements ActionListener{
                 if(botonMatriz[f][1].getText().equals(marca1)){
                     aux1++;
                     if(aux1==3){
+<<<<<<< HEAD
                        JOptionPane.showMessageDialog(this,"Columna Central Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                       JOptionPane.showMessageDialog(this,"Columna Central Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                        this.limpiarTablero();
                     }
                 }
@@ -282,7 +320,11 @@ public class Triqui extends JFrame implements ActionListener{
 
                     aux1++;
                     if(aux1==3){
+<<<<<<< HEAD
                        JOptionPane.showMessageDialog(this,"Columna Derecha Llena Ganas  ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+=======
+                       JOptionPane.showMessageDialog(this,"Columna Derecha Llena Ganas GARAYAR ","Ganador",JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> elizabeth/master
                        this.limpiarTablero();
                     }
                 }
