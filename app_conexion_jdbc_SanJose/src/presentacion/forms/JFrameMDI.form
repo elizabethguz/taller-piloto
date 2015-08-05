@@ -18,7 +18,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/archivo.png"/>
+=======
+              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/archivo.png"/>
+>>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Archivo"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -85,7 +89,11 @@
                   <Color blue="0" green="0" id="ToolBar.dockingForeground" palette="3" red="ff" type="palette"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
                   <Image iconType="3" name="/AImagenesSanJose/Iconos/salir.png"/>
+=======
+                  <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/salir.png"/>
+>>>>>>> elizabeth/master
                 </Property>
                 <Property name="text" type="java.lang.String" value="SALIR"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -104,7 +112,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/mantenimiento.png"/>
+=======
+              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/mantenimiento.png"/>
+>>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Mantenimiento"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -227,7 +239,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/consultas.png"/>
+=======
+              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/consultas.png"/>
+>>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Consultas"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -313,7 +329,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/reportes.jpg"/>
+=======
+              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/reportes.jpg"/>
+>>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Reportes"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -452,7 +472,11 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/ayuda.png"/>
+=======
+              <Image iconType="3" name="/AgenciaVuelosImagenes/ImagesIconos/consultas.JPG"/>
+>>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

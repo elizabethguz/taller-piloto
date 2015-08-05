@@ -9,7 +9,10 @@ import java.sql.Date;
 public class BaseEntity implements Serializable {
     private int id;
     private String nombre;
+<<<<<<< HEAD
     
+=======
+>>>>>>> elizabeth/master
     private int rowSearch = 0;
     private String A;
     private String B;
