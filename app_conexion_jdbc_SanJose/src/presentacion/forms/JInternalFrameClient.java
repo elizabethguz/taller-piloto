@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author User
  */
-public class JInternalFrameCliente extends javax.swing.JInternalFrame
+public class JInternalFrameClient extends javax.swing.JInternalFrame
      implements IEventsCursor, IEventsDatabase{
       JPanelScroll Scroll=null;
       JPanelUpdate ScrollDB=null;
-      private entity.Cliente registro;
-      private negocio.Cliente BaseDeDatos;
+      private entity.Client registro;
+      private negocio.Client BaseDeDatos;
       private negocio.TipoCliente TipoCliente;
       private presentacion.components.AdminCBO cbo=new presentacion.components.AdminCBO();
       DefaultTableModel objModTab;
@@ -26,7 +26,7 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
       /**
      * Creates new form JInternalFrameCiudad
      */
-    public JInternalFrameCliente() {
+    public JInternalFrameClient() {
           super("",
           false, //resizable
           true, //closable
@@ -34,8 +34,8 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
           true);//iconificable
         initComponents();
         LoadJPanelScroll();
-        registro = new entity.Cliente();
-        BaseDeDatos = new negocio.Cliente();
+        registro = new entity.Client();
+        BaseDeDatos = new negocio.Client();
         Scroll.setList(BaseDeDatos.getItems());
         TipoCliente = new negocio.TipoCliente();
         cbo.LoadComboOfItems(jcboTipoCliente,TipoCliente.getItemsCBO());
@@ -65,7 +65,7 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
             int numRow=Scroll.getCount();   
             
             for(int i=0;i<=numRow-1;i++){   
-                entity.Cliente objE = (entity.Cliente)Scroll.getItem();
+                entity.Client objE = (entity.Client)Scroll.getItem();
                 
                 registro[0]=String.valueOf(objE.getId()).trim();
                                
@@ -105,10 +105,10 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
     }
     private void ActualizarDatosMostrados(){
       if (Scroll.ExistsRow())
-          { entity.Cliente row = (entity.Cliente)Scroll.getItem();
+          { entity.Client row = (entity.Client)Scroll.getItem();
             this.jtxtCodigo.setText(String.valueOf(row.getId()));
-            this.jtxtDNI.setText(row.getNombre());
-            this.jtxtNombre.setText(row.getA());
+            this.jtxtNombre.setText(row.getNombre());
+            this.jtxtNombre1.setText(row.getA());
             this.jtxtSexo.setText(row.getB());
             this.jtxtCorreo.setText(row.getC());
             this.jtxtCelular.setText(row.getD());
@@ -123,8 +123,8 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
           }
       else{
            this.jtxtCodigo.setText("");
-           this.jtxtDNI.setText("");
-           this.jtxtNombre .setText("");
+           this.jtxtNombre.setText("");
+           this.jtxtNombre1 .setText("");
            this.jtxtSexo.setText("");
            this.jtxtCorreo.setText("");
            this.jtxtCelular.setText("");
@@ -140,8 +140,8 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
 
     private boolean puedeGrabar(){
         int id_tipocliente = cbo.getSelectedComboID(this.jcboTipoCliente);
-        registro.setNombre(jtxtDNI.getText().trim());
-        registro.setA(jtxtNombre.getText().trim());
+        registro.setNombre(jtxtNombre.getText().trim());
+        registro.setA(jtxtNombre1.getText().trim());
         registro.setB(jtxtSexo.getText().trim());
         registro.setC(jtxtCorreo.getText().trim());
         registro.setD(jtxtCelular.getText().trim());
@@ -153,8 +153,8 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
     }
     private void ConfiguraInterfaz(enumStatus status){
         this.jtxtCodigo.setEnabled(false);
-        this.jtxtDNI.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
         this.jtxtNombre.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
+        this.jtxtNombre1.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
         this.jtxtSexo.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
         this.jtxtCorreo.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
         this.jtxtCelular.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
@@ -165,8 +165,8 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
         this.Scroll.setEnabled(status == enumStatus.explorando);
         switch(status){
             case insertando:{  this.jtxtCodigo.setText("<Auto>");
-                               this.jtxtDNI.setText("");
                                this.jtxtNombre.setText("");
+                               this.jtxtNombre1.setText("");
                                this.jtxtSexo.setText("");
                                this.jtxtCorreo.setText("");
                                this.jtxtCelular.setText("");
@@ -190,7 +190,7 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
         String buscar = JOptionPane.showInputDialog(null, "Escriba DNI del Cliente", "BUSQUEDA POR DNI - CLIENTE", 3).trim();
         if (buscar.length()<1) {return; }
         
-        entity.Cliente row = new entity.Cliente();
+        entity.Client row = new entity.Client();
         row.setNombre(buscar);
         row.setRowSearch(2);
         int index = Scroll.getList().indexOf(row);
@@ -239,10 +239,10 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
         jLabel4 = new javax.swing.JLabel();
         jcboTipoCliente = new javax.swing.JComboBox();
         jlblInfoRegistros = new javax.swing.JLabel();
-        jtxtDNI = new javax.swing.JTextField();
+        jtxtNombre = new javax.swing.JTextField();
         jlblInfoTitle = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jtxtNombre = new javax.swing.JTextField();
+        jtxtNombre1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jtxtSexo = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -288,10 +288,10 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
         jlblInfoRegistros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblInfoRegistros.setText("jLabel3");
 
-        jtxtDNI.setBackground(new java.awt.Color(0, 0, 0));
-        jtxtDNI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jtxtDNI.setForeground(new java.awt.Color(255, 0, 0));
-        jtxtDNI.setText("jTextField2");
+        jtxtNombre.setBackground(new java.awt.Color(0, 0, 0));
+        jtxtNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jtxtNombre.setForeground(new java.awt.Color(255, 0, 0));
+        jtxtNombre.setText("jTextField2");
 
         jlblInfoTitle.setBackground(new java.awt.Color(255, 255, 255));
         jlblInfoTitle.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
@@ -301,10 +301,10 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
 
-        jtxtNombre.setBackground(new java.awt.Color(0, 0, 0));
-        jtxtNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jtxtNombre.setForeground(new java.awt.Color(255, 0, 0));
-        jtxtNombre.setText("TextField3");
+        jtxtNombre1.setBackground(new java.awt.Color(0, 0, 0));
+        jtxtNombre1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jtxtNombre1.setForeground(new java.awt.Color(255, 0, 0));
+        jtxtNombre1.setText("TextField3");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -431,11 +431,11 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jtxtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jtxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jtxtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jtxtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -484,11 +484,11 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -515,7 +515,7 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
                     .addComponent(jLabel4)
                     .addComponent(jcboTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblInfoRegistros))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnBuscar5))
@@ -574,9 +574,9 @@ public class JInternalFrameCliente extends javax.swing.JInternalFrame
     private javax.swing.JTextField jtxtCelular;
     private javax.swing.JTextField jtxtCodigo;
     private javax.swing.JTextField jtxtCorreo;
-    private javax.swing.JTextField jtxtDNI;
     private javax.swing.JTextField jtxtDescripcion;
     private javax.swing.JTextField jtxtNombre;
+    private javax.swing.JTextField jtxtNombre1;
     private javax.swing.JTextField jtxtSexo;
     private javax.swing.JTable tbMantCliente;
     public javax.swing.JTextField textBuscarNombre;

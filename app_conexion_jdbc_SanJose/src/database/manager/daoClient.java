@@ -3,15 +3,15 @@
  */
 package database.manager;
 
-import database.jdbc.QueryCliente;
+import database.jdbc.QueryClient;
 
 /**
  *
  * @authores : Eli y Dina
  */
-public class daoCliente extends BaseManager{
+public class daoClient extends BaseManager{
     
-    public daoCliente(){
+    public daoClient(){
       
       super();  
       FieldID = "id_cliente";
@@ -26,8 +26,8 @@ public class daoCliente extends BaseManager{
       
       
       //-----------------------------
-      entidad = new entity.Cliente();
-      querySQL = new QueryCliente();
+      entidad = new entity.Client();
+      querySQL = new QueryClient();
       querySQL.setEntity(entidad);
     }
 }

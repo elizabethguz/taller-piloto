@@ -28,7 +28,7 @@ public class JPanelFondo1 extends javax.swing.JPanel {
     public void paintComponent(Graphics g){
     
     Dimension tam=getSize();
-    ImageIcon ImagenFondo=new ImageIcon(new ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/eje2.gif")).getImage());
+    ImageIcon ImagenFondo=new ImageIcon(new ImageIcon(getClass().getResource("/AImagenesSanJose/eje2.gif")).getImage());
     g.drawImage(ImagenFondo.getImage(), 0,0 , tam.width,tam.height,null);
     setOpaque(false);
     super.paintComponent(g);

@@ -131,7 +131,7 @@ private void cerrar(){
         jLabel1.setText("REGISTRO USUARIO");
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/1.gif"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/1.gif"))); // NOI18N
         jLabel7.setPreferredSize(new java.awt.Dimension(100, 226));
 
         login.setBackground(new java.awt.Color(0, 0, 0));

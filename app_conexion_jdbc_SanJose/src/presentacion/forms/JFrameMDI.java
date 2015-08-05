@@ -137,7 +137,7 @@ public class JFrameMDI extends javax.swing.JFrame {
 
         jMenu1.setBackground(new java.awt.Color(0, 0, 0));
         jMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/archivo.png"))); // NOI18N
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/archivo.png"))); // NOI18N
         jMenu1.setText("Archivo");
         jMenu1.setFont(new java.awt.Font("Hobo Std", 1, 16)); // NOI18N
 
@@ -164,7 +164,7 @@ public class JFrameMDI extends javax.swing.JFrame {
         jmnuSalir.setBackground(new java.awt.Color(0, 0, 51));
         jmnuSalir.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jmnuSalir.setForeground(javax.swing.UIManager.getDefaults().getColor("ToolBar.dockingForeground"));
-        jmnuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/salir.png"))); // NOI18N
+        jmnuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/salir.png"))); // NOI18N
         jmnuSalir.setText("SALIR");
         jmnuSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jmnuSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +177,7 @@ public class JFrameMDI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/mantenimiento.png"))); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/mantenimiento.png"))); // NOI18N
         jMenu2.setText("Mantenimiento");
         jMenu2.setFont(new java.awt.Font("Hobo Std", 1, 16)); // NOI18N
 
@@ -253,7 +253,7 @@ public class JFrameMDI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu6.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/consultas.png"))); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/consultas.png"))); // NOI18N
         jMenu6.setText("Consultas");
         jMenu6.setFont(new java.awt.Font("Hobo Std", 1, 16)); // NOI18N
 
@@ -301,7 +301,7 @@ public class JFrameMDI extends javax.swing.JFrame {
 
         jmnuRCliente.setBackground(new java.awt.Color(0, 0, 51));
         jmnuRCliente.setForeground(new java.awt.Color(255, 255, 255));
-        jmnuRCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/reportes.jpg"))); // NOI18N
+        jmnuRCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/reportes.jpg"))); // NOI18N
         jmnuRCliente.setText("Reportes");
         jmnuRCliente.setFont(new java.awt.Font("Hobo Std", 1, 16)); // NOI18N
 
@@ -387,7 +387,7 @@ public class JFrameMDI extends javax.swing.JFrame {
         jMenuBar1.add(jmnuRCliente);
 
         jMenu5.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/ImagesIconos/consultas.JPG"))); // NOI18N
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/ayuda.png"))); // NOI18N
         jMenu5.setText("Ayuda");
         jMenu5.setFont(new java.awt.Font("Hobo Std", 1, 16)); // NOI18N
 
@@ -446,21 +446,21 @@ public class JFrameMDI extends javax.swing.JFrame {
 
     private void jmnuRClienteComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnuRClienteComercialActionPerformed
         // TODO add your handling code here:
-//        Reportes.VisorReportes v= new Reportes.VisorReportes();
-//        v.showReportHOTEL();
+      Reportes.VisorReportes v= new Reportes.VisorReportes();
+     v.showReportTIPOCLIENTE();
     }//GEN-LAST:event_jmnuRClienteComercialActionPerformed
 
     private void jmnuRServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnuRServicioActionPerformed
         // TODO add your handling code here:
         
-//          Reportes.VisorReportes v= new Reportes.VisorReportes();
-//          v.showReportVUELO();
+         Reportes.VisorReportes v= new Reportes.VisorReportes();
+          v.showReportSERVICIO();
     }//GEN-LAST:event_jmnuRServicioActionPerformed
 
     private void jmnuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnuClienteActionPerformed
                        
          
-        JInternalFrameCliente  f= new JInternalFrameCliente();
+        JInternalFrameClient  f= new JInternalFrameClient();
         f.setTitle("Cliente: Mantenimiento de Datos");
         f.setVisible(true);
         theDesktop.add(f);
@@ -478,10 +478,10 @@ public class JFrameMDI extends javax.swing.JFrame {
     private void jmnuServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnuServicioActionPerformed
         // TODO add your handling code here:
         
-//       JInternalFrameTipocli  f= new JInternalFrameTipocli();
-//        f.setTitle("Vuelos: Mantenimiento de Datos");
-//        f.setVisible(true);
-//        theDesktop.add(f);
+      JInternalServicio  f= new JInternalServicio();
+        f.setTitle("Servicio: Mantenimiento de Datos");
+        f.setVisible(true);
+        theDesktop.add(f);
     
     }//GEN-LAST:event_jmnuServicioActionPerformed
 
@@ -522,8 +522,8 @@ public class JFrameMDI extends javax.swing.JFrame {
 
     private void ReporteUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteUsuarioActionPerformed
         // TODO add your handling code here:
-//          Reportes.VisorReportes v= new Reportes.VisorReportes();
-//          v.showReportUSUARIO();
+          Reportes.VisorReportes v= new Reportes.VisorReportes();
+          v.showReportUSUARIO();
     }//GEN-LAST:event_ReporteUsuarioActionPerformed
 
     private void jMenuUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuUsuarioActionPerformed

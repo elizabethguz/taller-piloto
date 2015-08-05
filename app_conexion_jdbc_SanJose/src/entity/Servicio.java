@@ -3,8 +3,8 @@
  */
 package entity;
 
-public class Usuario extends BaseEntity {
-    public Usuario(){
+public class Servicio extends BaseEntity {
+    public Servicio(){
         super();
     }
 }

@@ -19,13 +19,13 @@ import presentacion.components.enumStatus;
  *
  * @author User
  */
-public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  implements IEventsCursor, IEventsDatabase{
+public class JInternalServicio extends javax.swing.JInternalFrame  implements IEventsCursor, IEventsDatabase{
      JDesktopPane theDesktop = new JDesktopPane();  
      JPanelScroll Scroll=null;
      JPanelUpdate ScrollDB=null;
      String JPanelFondo4;
-      private entity.TipoCliente registro;
-      private negocio.TipoCliente BaseDeDatos;
+      private entity.Servicio registro;
+      private negocio.Servicio BaseDeDatos;
       private presentacion.components.AdminCBO cbo=new presentacion.components.AdminCBO();
     DefaultTableModel objModTab;
       /**
@@ -33,7 +33,7 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
      * Creates new form JInternalFrameClienteMnto
      */
     
-    public JInternalFrameTipoCliente() {
+    public JInternalServicio() {
          super("",
           false, //resizable
           true, //closable
@@ -48,8 +48,8 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
         //fondo4.setLocation(50, 400);
         //---------------------------------
         LoadJPanelScroll();
-        registro = new entity.TipoCliente();
-        BaseDeDatos = new negocio.TipoCliente();
+        registro = new entity.Servicio();
+        BaseDeDatos = new negocio.Servicio();
         Scroll.setList(BaseDeDatos.getItems());
         ActualizarDatosMostrados();
         mostrarTablaCliente();
@@ -63,9 +63,9 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
      String[] nomColumna = new String[4];
         String[] registro = new String[4];        
         nomColumna[0]="ID";
-        nomColumna[1]="RUC"; 
-        nomColumna[2]="NOMBRE"; 
-        nomColumna[3]="DESCRIPCION"; 
+        nomColumna[1]="NOMBRE"; 
+        nomColumna[2]="DES"; 
+        nomColumna[3]="PRECIO";
         //nomColumna[4]="DIRECCION"; 
        
        
@@ -73,7 +73,7 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
             int numRow=Scroll.getCount();   
             
             for(int i=0;i<=numRow-1;i++){   
-                entity.TipoCliente objE = (entity.TipoCliente)Scroll.getItem();
+                entity.Servicio objE = (entity.Servicio)Scroll.getItem();
                 registro[0]=String.valueOf(objE.getId()).trim();
                 registro[1]=objE.getNombre().trim();
                 registro[2]=objE.getA().trim();
@@ -107,12 +107,12 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
     }
     private void ActualizarDatosMostrados(){
       if (Scroll.ExistsRow())
-          { entity.TipoCliente row = (entity.TipoCliente)Scroll.getItem();
+          { entity.Servicio row = (entity.Servicio)Scroll.getItem();
              //--------------------------------------------
             this.jtxtCodigo.setText(String.valueOf(row.getId()));
-            this.jtxtRuc.setText(row.getNombre());
-            this.jtxtNombre.setText(row.getA());
-            this.jtxtDescripcion.setText(row.getB());
+            this.jtxtNombre.setText(row.getNombre());
+            this.jtxtNombre1.setText(row.getA());
+            this.jtxtPrrecio.setText(row.getB());
             
             //--------------------------------------------
             String s = String.valueOf(Scroll.getIndex()+1) + " de " + String.valueOf(Scroll.getCount());
@@ -121,9 +121,9 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
           }
       else{
            this.jtxtCodigo.setText("");
-           this.jtxtRuc.setText("");
            this.jtxtNombre.setText("");
-           this.jtxtDescripcion.setText("");
+           this.jtxtNombre1.setText("");
+           this.jtxtPrrecio.setText("");
            
            //--------------------------
            
@@ -134,9 +134,9 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
 
     private boolean puedeGrabar(){
         
-      registro.setNombre(jtxtRuc.getText().trim());
-      registro.setA(jtxtNombre.getText().trim());
-      registro.setB(jtxtDescripcion.getText().trim());
+      registro.setNombre(jtxtNombre.getText().trim());
+      registro.setA(jtxtNombre1.getText().trim());
+      registro.setB(jtxtPrrecio.getText().trim());
       
       //--------------------------
       
@@ -144,37 +144,37 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
     }
     private void ConfiguraInterfaz(enumStatus status){
         this.jtxtCodigo.setEnabled(false);
-        this.jtxtRuc.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
         this.jtxtNombre.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
-        this.jtxtDescripcion.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
+        this.jtxtNombre1.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
+        this.jtxtPrrecio.setEnabled(status == enumStatus.insertando ||status == enumStatus.modificando);
         //--------------------------
         this.Scroll.setEnabled(status == enumStatus.explorando);
         switch(status){
             case insertando:{  this.jtxtCodigo.setText("<Auto>");
-                               this.jtxtRuc.setText("");
                                this.jtxtNombre.setText("");
-                               this.jtxtDescripcion.setText("");
+                               this.jtxtNombre1.setText("");
+                               this.jtxtPrrecio.setText("");
                                
                                //---------------------------------------
-                               this.jlblInfoTitle.setText("Tipo Cliente: Nuevo Registro");
+                               this.jlblInfoTitle.setText("Servicio: Nuevo Registro");
                                break;
                               
                                //*****************************************                                                             
                             }    
-            case modificando:{ this.jlblInfoTitle.setText("Tipo Cliente: Modificando");
+            case modificando:{ this.jlblInfoTitle.setText("Servicio: Modificando");
                                break;
                             }
-            case explorando:{  this.jlblInfoTitle.setText("Tipo Cliente: Explorando");
+            case explorando:{  this.jlblInfoTitle.setText("Servicio: Explorando");
                                break;
                             }                    
         }
     
     }
     private void buscarRegistro(){
-        String buscar = JOptionPane.showInputDialog(null, "Escriba el Cliente", "Nombre del Cliente", 3).trim();
+        String buscar = JOptionPane.showInputDialog(null, "Escriba el Servicio", "Nombre del Servicio", 3).trim();
         if (buscar.length()<1) { return ; }
         
-        entity.TipoCliente row = new entity.TipoCliente();
+        entity.Servicio row = new entity.Servicio();
         row.setNombre(buscar);
         row.setRowSearch(2);
         
@@ -222,15 +222,15 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
     private void initComponents() {
 
         jtxtCodigo = new javax.swing.JTextField();
-        jtxtRuc = new javax.swing.JTextField();
+        jtxtNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        NOMBRE = new javax.swing.JLabel();
         jlblInfoRegistros = new javax.swing.JLabel();
         jlblInfoTitle = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        DESCR = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jtxtDescripcion = new javax.swing.JTextField();
-        jtxtNombre = new javax.swing.JTextField();
+        jtxtPrrecio = new javax.swing.JTextField();
+        jtxtNombre1 = new javax.swing.JTextField();
         lbfoto4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jtxtRutaFoto = new javax.swing.JTextField();
@@ -250,7 +250,7 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
         jScrollPane1 = new javax.swing.JScrollPane();
         tbMantCliente = new javax.swing.JTable();
 
-        setBackground(java.awt.Color.blue);
+        setBackground(java.awt.Color.magenta);
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(890, 650));
 
@@ -264,18 +264,18 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
             }
         });
 
-        jtxtRuc.setBackground(new java.awt.Color(0, 0, 0));
-        jtxtRuc.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jtxtRuc.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtRuc.setText("jTextField2");
+        jtxtNombre.setBackground(new java.awt.Color(0, 0, 0));
+        jtxtNombre.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jtxtNombre.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtNombre.setText("jTextField2");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ID");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("DOCUMEN");
+        NOMBRE.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NOMBRE.setForeground(new java.awt.Color(255, 255, 255));
+        NOMBRE.setText("NOMBRE");
 
         jlblInfoRegistros.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jlblInfoRegistros.setForeground(new java.awt.Color(255, 255, 255));
@@ -286,25 +286,25 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
         jlblInfoTitle.setForeground(new java.awt.Color(255, 255, 255));
         jlblInfoTitle.setText("jLabel3");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("NOMBRE");
+        DESCR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        DESCR.setForeground(new java.awt.Color(255, 255, 255));
+        DESCR.setText("DES");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("DESCRIPCION");
+        jLabel4.setText("PRECIO");
 
-        jtxtDescripcion.setBackground(new java.awt.Color(0, 0, 0));
-        jtxtDescripcion.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jtxtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtDescripcion.setText("jTextField4");
+        jtxtPrrecio.setBackground(new java.awt.Color(0, 0, 0));
+        jtxtPrrecio.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jtxtPrrecio.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtPrrecio.setText("jTextField4");
 
-        jtxtNombre.setBackground(new java.awt.Color(0, 0, 0));
-        jtxtNombre.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jtxtNombre.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtNombre.setText("jTextField3");
+        jtxtNombre1.setBackground(new java.awt.Color(0, 0, 0));
+        jtxtNombre1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jtxtNombre1.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtNombre1.setText("jTextField3");
 
-        lbfoto4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/FotosTurista/turista.JPG"))); // NOI18N
+        lbfoto4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/U.jpg"))); // NOI18N
         lbfoto4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel7.setFont(new java.awt.Font("Eras Demi ITC", 1, 14)); // NOI18N
@@ -328,7 +328,7 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Gifs Animados Turistas 1.gif"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Gifs Animados Turistas 1.gif"))); // NOI18N
 
         jbtnGrabar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jbtnGrabar.setText("GRABAR");
@@ -430,30 +430,39 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(1, 1, 1)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(1, 1, 1)
-                                            .addComponent(jLabel3)
-                                            .addGap(18, 18, 18)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jtxtRuc, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jtxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel4)
-                                            .addGap(15, 15, 15)
-                                            .addComponent(jtxtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlblInfoRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(155, 155, 155)))
-                        .addGap(53, 53, 53)
+                                .addGap(55, 55, 55)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(NOMBRE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(1, 1, 1)
+                                                .addComponent(DESCR))
+                                            .addComponent(jLabel1))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jtxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(52, 52, 52)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jtxtPrrecio)
+                                                    .addComponent(jtxtNombre1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jlblInfoRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4))))
+                                .addGap(53, 53, 53))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jlblInfoTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(textBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -462,25 +471,20 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jLabel51)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jtxtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jlblInfoTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(129, 129, 129))
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel51)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtxtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jbtnCargarFoto))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(lbfoto4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                    .addComponent(lbfoto4))
+                                .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -492,80 +496,79 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
                                             .addComponent(jbtnGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(65, 65, 65)
-                                        .addComponent(jbtnCancelar)))
-                                .addGap(18, 18, 18)))
+                                        .addComponent(jbtnCancelar)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(37, 37, 37)
                                 .addComponent(jSpinnerDateEditor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(424, 424, 424))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                .addGap(599, 599, 599))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(13, 13, 13)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(jbtnCargarFoto))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lbfoto4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel51)
-                                        .addComponent(jtxtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jbtnGrabar)
-                                        .addComponent(jbtnNuevo))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jbtnEditar)
-                                        .addComponent(jbtnEliminar))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jbtnCancelar)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jbtnCargarFoto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbfoto4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel51)
+                                    .addComponent(jtxtRutaFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jbtnGrabar)
+                                    .addComponent(jbtnNuevo))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jbtnEditar)
+                                    .addComponent(jbtnEliminar))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbtnCancelar))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSpinnerDateEditor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jlblInfoTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jSpinnerDateEditor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6))
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtRuc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jlblInfoTitle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jtxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NOMBRE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtxtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DESCR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtxtPrrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addGap(62, 62, 62)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jlblInfoRegistros)
-                        .addGap(62, 62, 62))
+                        .addGap(113, 113, 113))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -629,10 +632,10 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
     }//GEN-LAST:event_jbtnBuscarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DESCR;
+    private javax.swing.JLabel NOMBRE;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
@@ -650,9 +653,9 @@ public class JInternalFrameTipoCliente extends javax.swing.JInternalFrame  imple
     private javax.swing.JLabel jlblInfoRegistros;
     private javax.swing.JLabel jlblInfoTitle;
     private javax.swing.JTextField jtxtCodigo;
-    private javax.swing.JTextField jtxtDescripcion;
     private javax.swing.JTextField jtxtNombre;
-    private javax.swing.JTextField jtxtRuc;
+    private javax.swing.JTextField jtxtNombre1;
+    private javax.swing.JTextField jtxtPrrecio;
     private javax.swing.JTextField jtxtRutaFoto;
     private javax.swing.JLabel lbfoto4;
     private javax.swing.JTable tbMantCliente;

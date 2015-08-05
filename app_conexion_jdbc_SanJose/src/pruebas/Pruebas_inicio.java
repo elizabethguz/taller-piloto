@@ -1,11 +1,5 @@
 /*
- * PLANTILLA DE UNA APLICACION DE ACCESO A DATOS EN 
- *       JAVA - USANDO JDBC
- *    UNIVERSIDAD NACIONAL JOSE MARIA ARGUEDAS
- *       PROGRAMACION AVANZADA EN JAVA
- *   Carrera Profesional de Ingenieria de Sistemas
- *   PREPARADO POR : Ing. Edwin Octavio Ramos Velásquez
- *     Andahuaylas, 2013
+
  */
 package pruebas;
 

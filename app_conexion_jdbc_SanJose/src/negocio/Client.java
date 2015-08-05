@@ -7,9 +7,9 @@ package negocio;
  *
  * @author Daniel
  */
-public class Cliente extends BaseNegocio{
-    public Cliente(){
+public class Client extends BaseNegocio{
+    public Client(){
         super();
-        manager = new database.manager.daoCliente();
+        manager = new database.manager.daoClient();
     }
 }

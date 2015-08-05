@@ -116,7 +116,7 @@ public class JPanelScroll extends javax.swing.JPanel {
         });
 
         jbtnUltimo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jbtnUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/BUSCAR.png"))); // NOI18N
+        jbtnUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/BUSCAR.png"))); // NOI18N
         jbtnUltimo.setText(" Buscar");
         jbtnUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +163,7 @@ public class JPanelScroll extends javax.swing.JPanel {
                 .addComponent(jbtnUltimaso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbtnUltimo)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

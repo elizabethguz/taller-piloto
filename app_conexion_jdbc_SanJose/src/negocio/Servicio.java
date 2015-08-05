@@ -7,9 +7,9 @@ package negocio;
  *
  * @author Administrador
  */
-public class Usuario  extends BaseNegocio{
-     public Usuario() {
+public class Servicio  extends BaseNegocio{
+     public Servicio() {
       super();
-      manager = new database.manager.daoUsuario();
+      manager = new database.manager.daoServicio();
     }   
 }

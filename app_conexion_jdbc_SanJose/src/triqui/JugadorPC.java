@@ -26,15 +26,15 @@ public class JugadorPC {
 
         /***************************
          *        *        *       *
-         *  pos 1 * pos 2  * pos 3 *
+         *  posi 1 * posi 2  * posi 3 *
          *        *        *       *
          ***************************
          *        *        *       *
-         *  pos 4 * pos 5  * pos 6 *
+         *  posi 4 * posi 5  * posi 6 *
          *        *        *       *
          * *************************
          *        *        *       *
-         *  pos 7 * pos 8  * pos 9 *
+         *  posi 7 * posi 8  * posi 9 *
          *        *        *       *
          * **************************/
         String pos1 = "" + boton[0][0].getText();

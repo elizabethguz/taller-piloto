@@ -58,7 +58,7 @@ public class JPanelUpdate extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 204, 204));
 
         jbtnEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jbtnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/16 (User edit).jpg"))); // NOI18N
+        jbtnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/16 (User edit).jpg"))); // NOI18N
         jbtnEditar.setText("Editar");
         jbtnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,7 @@ public class JPanelUpdate extends javax.swing.JPanel {
         });
 
         jbtnGrabar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jbtnGrabar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/GRABAR.jpg"))); // NOI18N
+        jbtnGrabar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/GRABAR.jpg"))); // NOI18N
         jbtnGrabar.setText("Grabar");
         jbtnGrabar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class JPanelUpdate extends javax.swing.JPanel {
         });
 
         jbtnCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jbtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/ELIMINAR.jpg"))); // NOI18N
+        jbtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/ELIMINAR.jpg"))); // NOI18N
         jbtnCancelar.setText("Cancelar");
         jbtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +85,7 @@ public class JPanelUpdate extends javax.swing.JPanel {
         });
 
         jbtnNuevo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jbtnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/16 (User add).jpg"))); // NOI18N
+        jbtnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/16 (User add).jpg"))); // NOI18N
         jbtnNuevo.setText("Nuevo");
         jbtnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +102,7 @@ public class JPanelUpdate extends javax.swing.JPanel {
         });
 
         jbtnEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jbtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/16 (User delete).jpg"))); // NOI18N
+        jbtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/16 (User delete).jpg"))); // NOI18N
         jbtnEliminar.setText("Eliminar");
         jbtnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

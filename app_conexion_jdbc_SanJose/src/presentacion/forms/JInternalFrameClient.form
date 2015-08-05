@@ -54,12 +54,12 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jtxtDNI" min="-2" pref="190" max="-2" attributes="0"/>
+                                      <Component id="jtxtNombre" min="-2" pref="190" max="-2" attributes="0"/>
                                       <Component id="jtxtCodigo" min="-2" pref="190" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                       <Component id="jtxtSexo" min="-2" pref="189" max="-2" attributes="0"/>
-                                      <Component id="jtxtNombre" min="-2" pref="188" max="-2" attributes="0"/>
+                                      <Component id="jtxtNombre1" min="-2" pref="188" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -130,12 +130,12 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jtxtDNI" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="jtxtNombre" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jtxtNombre" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="jtxtNombre1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -172,7 +172,7 @@
                   <Component id="jcboTipoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jlblInfoRegistros" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="152" max="32767" attributes="0"/>
+              <EmptySpace pref="164" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="textBuscarNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbtnBuscar5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -265,7 +265,7 @@
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxtDNI">
+    <Component class="javax.swing.JTextField" name="jtxtNombre">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -301,7 +301,7 @@
         <Property name="text" type="java.lang.String" value="NOMBRE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxtNombre">
+    <Component class="javax.swing.JTextField" name="jtxtNombre1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>

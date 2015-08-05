@@ -7,28 +7,36 @@ import entity.BaseEntity;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class QueryCliente extends QuerySQL {
+public class QueryClient extends QuerySQL {
     //implementar todos los metodos abstractos....
-     public QueryCliente(){
-        setEntity(new entity.Cliente());
+     public QueryClient(){
+        setEntity(new entity.Client());
      }
      @Override
      public BaseEntity getNewEntity(){
-         return new entity.Cliente();
+         return new entity.Client();
      }
      @Override
      public String getQuerySQL(TipoJdbc opcion){
           String s="";
           switch(opcion)
-            { case readBASE_Entity: s = "SELECT id_cliente, dni_cliente, nombre_cliente, sexo_cliente, correo_cliente, celular_cliente, cargo_cliente, descripcion_cliente FROM cliente";
+            {  case readBASE_Entity: s = "SELECT id_cliente, dni_cliente, nombre_cliente, sexo_cliente "
+                                         + ",correo_cliente, celular_cliente, cargo_cliente, descripcion_cliente "
+                                         + "FROM cliente";
                                        break;
-              case readLIST_ALL  :  s = "SELECT C.id_cliente, C.dni_cliente, C.nombre_cliente, C.sexo_cliente, C.correo_cliente, C.celular_cliente, C.cargo_cliente, C.descripcion_cliente,C.id_tipocliente, nombre_tipocliente " 
-                                      + "FROM BaseSanjose.tipo_cliente AS P "
-                                      + "INNER JOIN BaseSanjose.cliente AS C ON (P.id_tipocliente = C.id_tipocliente) ";
-                                       break;
-              case readListCOUNT : s = "SELECT COUNT(*)AS ID FROM cliente";break; 
-              case writeINSERT   : s = "INSERT INTO cliente (id_cliente, dni_cliente, nombre_cliente, sexo_cliente, correo_cliente, celular_cliente, cargo_cliente, descripcion _cliente, id_tipocliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; break;
-              case writeUPDATE   : s = "UPDATE cliente SET dni_cliente = ?, nombre_cliente = ?,sexo_cliente = ?,correo_cliente= ?, celular_cliente= ?, cargo_cliente= ?, descripcion _cliente = ?, id_tipocliente = ? WHERE id_cliente = ? "; break;
+                
+              case readLIST_ALL  :  s = "SELECT E.id_cliente, E.dni_cliente, E.nombre_cliente, E.sexo_cliente"
+                                         + ",E.correo_cliente, E.celular_cliente, E.cargo_cliente, E.descripcion_cliente"
+                                         + ", E.id_tipocliente, ruc_tipocliente FROM BaseSanjose.tipo_cliente AS V"
+                                         + "INNER JOIN BaseSanjose.cliente AS E ON (V.id_tipocliente = E.id_tipocliente)";break;
+                  
+              case readListCOUNT : s = "SELECT COUNT(*)AS ID FROM cliente"; break; 
+              case writeINSERT   : s = "INSERT INTO cliente (id_cliente, dni_cliente, nombre_cliente, sexo_cliente "
+                                         + ",correo_cliente, celular_cliente, cargo_cliente, descripcion_cliente, id_tipocliente ) "
+                                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);"; 
+                                            break;
+              case writeUPDATE   : s = "UPDATE dni_cliente=?, nombre_cliente=?, sexo_cliente=? "
+                                         + ",correo_cliente=?, celular_cliente=?, cargo_cliente=?, descripcion_cliente=?, id_tipocliente=? WHERE id_cliente=? "; break;
               case writeDELETE   : s = "DELETE FROM cliente WHERE id_cliente = ?"; break;
               case readNewID     : s = "SELECT MAX(id_cliente)AS ID FROM cliente"; break;
             }
@@ -36,8 +44,8 @@ public class QueryCliente extends QuerySQL {
      }
      @Override
      public void copyDataToEntity(ResultSet rs, BaseEntity ent, TipoJdbc opcion){
-        entity.Cliente en=null;
-        if (ent instanceof entity.Cliente) {en= (entity.Cliente)ent;} 
+        entity.Client en=null;
+        if (ent instanceof entity.Client) {en= (entity.Client)ent;} 
         try{
          switch(opcion)
             { case readBASE_Entity: { ent.setId(rs.getInt(1));
@@ -74,7 +82,7 @@ public class QueryCliente extends QuerySQL {
      }
      @Override
      public void copyToPreparedStatement(BaseEntity ent, PreparedStatement ps,  TipoJdbc opcion){
-         entity.Cliente en = (entity.Cliente)ent;    
+         entity.Client en = (entity.Client)ent;    
          try {switch(opcion)
             { case writeINSERT: {
                                  ps.setInt(1,    en.getId()); //Primer parametro

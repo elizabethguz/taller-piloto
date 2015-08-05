@@ -3,11 +3,11 @@
  */
 package entity;
 
-public class Cliente  extends BaseEntity{
+public class Client  extends BaseEntity{
 
     public TipoCliente TipoCliente;
     
-    public Cliente(){
+    public Client(){
         super();
         TipoCliente = new TipoCliente();
     }
@@ -22,8 +22,8 @@ public class Cliente  extends BaseEntity{
     @Override 
     public void copyTo(BaseEntity obj){
           super.copyTo(obj);
-          if (obj instanceof Cliente)
-             {    Cliente p = (Cliente) obj;
+          if (obj instanceof Client)
+             {    Client p = (Client) obj;
                   TipoCliente.copyTo(p.TipoCliente);
              }
     } 
