@@ -66,11 +66,7 @@ public class Publicidad extends javax.swing.JFrame {
         jLabel11.setText("BOLETAS/FACTURAS            (Metro Cuadrado)");
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-<<<<<<< HEAD
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/logoEntrada.png"))); // NOI18N
-=======
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/logoEntrada.png"))); // NOI18N
->>>>>>> elizabeth/master
         jLabel12.setPreferredSize(new java.awt.Dimension(100, 226));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -173,10 +169,7 @@ public class Publicidad extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Publicidad().setVisible(true);
-<<<<<<< HEAD
          
-=======
->>>>>>> elizabeth/master
             }
         });
     }
