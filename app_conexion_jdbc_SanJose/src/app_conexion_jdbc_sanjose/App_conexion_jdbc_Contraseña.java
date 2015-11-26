@@ -131,11 +131,7 @@ private void cerrar(){
         jLabel1.setText("REGISTRO USUARIO");
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-<<<<<<< HEAD
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/1.gif"))); // NOI18N
-=======
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/1.gif"))); // NOI18N
->>>>>>> elizabeth/master
         jLabel7.setPreferredSize(new java.awt.Dimension(100, 226));
 
         login.setBackground(new java.awt.Color(0, 0, 0));
@@ -175,7 +171,7 @@ private void cerrar(){
         });
 
         jButtonAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/Yes.png"))); // NOI18N
+        jButtonAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/Yes.png"))); // NOI18N
         jButtonAceptar.setText("ACEPTAR");
         jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,7 +185,7 @@ private void cerrar(){
         });
 
         jButtonCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgenciaVuelosImagenes/Iconos/ELIMINAR.jpg"))); // NOI18N
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AImagenesSanJose/Iconos/ELIMINAR.jpg"))); // NOI18N
         jButtonCancelar.setText("CANCELAR");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
