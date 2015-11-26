@@ -58,11 +58,7 @@
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
           <Image iconType="3" name="/AImagenesSanJose/Iconos/16 (User edit).jpg"/>
-=======
-          <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/16 (User edit).jpg"/>
->>>>>>> elizabeth/master
         </Property>
         <Property name="text" type="java.lang.String" value="Editar"/>
       </Properties>
@@ -76,11 +72,7 @@
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
           <Image iconType="3" name="/AImagenesSanJose/Iconos/GRABAR.jpg"/>
-=======
-          <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/GRABAR.jpg"/>
->>>>>>> elizabeth/master
         </Property>
         <Property name="text" type="java.lang.String" value="Grabar"/>
       </Properties>
@@ -94,11 +86,7 @@
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
           <Image iconType="3" name="/AImagenesSanJose/Iconos/ELIMINAR.jpg"/>
-=======
-          <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/ELIMINAR.jpg"/>
->>>>>>> elizabeth/master
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
@@ -112,11 +100,7 @@
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
           <Image iconType="3" name="/AImagenesSanJose/Iconos/16 (User add).jpg"/>
-=======
-          <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/16 (User add).jpg"/>
->>>>>>> elizabeth/master
         </Property>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
       </Properties>
@@ -141,11 +125,7 @@
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
           <Image iconType="3" name="/AImagenesSanJose/Iconos/16 (User delete).jpg"/>
-=======
-          <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/16 (User delete).jpg"/>
->>>>>>> elizabeth/master
         </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
