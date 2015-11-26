@@ -18,11 +18,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/archivo.png"/>
-=======
-              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/archivo.png"/>
->>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Archivo"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -89,11 +85,7 @@
                   <Color blue="0" green="0" id="ToolBar.dockingForeground" palette="3" red="ff" type="palette"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
                   <Image iconType="3" name="/AImagenesSanJose/Iconos/salir.png"/>
-=======
-                  <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/salir.png"/>
->>>>>>> elizabeth/master
                 </Property>
                 <Property name="text" type="java.lang.String" value="SALIR"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -112,11 +104,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/mantenimiento.png"/>
-=======
-              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/mantenimiento.png"/>
->>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Mantenimiento"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -152,11 +140,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-<<<<<<< HEAD
                 <Property name="text" type="java.lang.String" value="MANTENIMIENTO TIPO-CLIENTE"/>
-=======
-                <Property name="text" type="java.lang.String" value="MANTENIMIENTO CLIENTE-COMERCIAL"/>
->>>>>>> elizabeth/master
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmnuClienteComercialActionPerformed"/>
@@ -223,21 +207,13 @@
                   <Color blue="33" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-<<<<<<< HEAD
                   <Font name="Segoe UI" size="14" style="1"/>
-=======
-                  <Font name="Segoe UI" size="18" style="1"/>
->>>>>>> elizabeth/master
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
-<<<<<<< HEAD
                 <Property name="text" type="java.lang.String" value="MANTENIMIENTO USUARIO"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
-=======
-                <Property name="text" type="java.lang.String" value="USUARIO"/>
->>>>>>> elizabeth/master
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuUsuarioActionPerformed"/>
@@ -251,11 +227,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/consultas.png"/>
-=======
-              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/consultas.png"/>
->>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Consultas"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -322,16 +294,42 @@
                   <Color blue="33" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-<<<<<<< HEAD
                   <Font name="Segoe UI" size="14" style="1"/>
-=======
-                  <Font name="Segoe UI" size="18" style="1"/>
->>>>>>> elizabeth/master
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="USUARIO"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu5">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/AImagenesSanJose/Iconos/ayuda.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ayuda"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Hobo Std" size="16" style="1"/>
+            </Property>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jmnuAyuda">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ACERCA DE"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -345,11 +343,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/Iconos/reportes.jpg"/>
-=======
-              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/reportes.jpg"/>
->>>>>>> elizabeth/master
             </Property>
             <Property name="text" type="java.lang.String" value="Reportes"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -385,11 +379,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-<<<<<<< HEAD
                 <Property name="text" type="java.lang.String" value="REPORTE TIPO-CLIENTE"/>
-=======
-                <Property name="text" type="java.lang.String" value="REPORTE CLIENTE-COMERCIAL"/>
->>>>>>> elizabeth/master
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmnuRClienteComercialActionPerformed"/>
@@ -473,11 +463,7 @@
                   <Color blue="33" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-<<<<<<< HEAD
                   <Font name="Segoe UI" size="14" style="1"/>
-=======
-                  <Font name="Segoe UI" size="18" style="1"/>
->>>>>>> elizabeth/master
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -487,40 +473,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReporteUsuarioActionPerformed"/>
               </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
-              <Image iconType="3" name="/AImagenesSanJose/Iconos/ayuda.png"/>
-=======
-              <Image iconType="3" name="/AgenciaVuelosImagenes/ImagesIconos/consultas.JPG"/>
->>>>>>> elizabeth/master
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ayuda"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Hobo Std" size="16" style="1"/>
-            </Property>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jmnuAyuda">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="ACERCA DE"/>
-              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
