@@ -104,31 +104,18 @@
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                       <Group type="102" attributes="0">
-=======
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" pref="212" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
->>>>>>> elizabeth/master
                           <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" pref="212" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-=======
-                  </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
->>>>>>> elizabeth/master
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
@@ -172,11 +159,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-<<<<<<< HEAD
               <Image iconType="3" name="/AImagenesSanJose/1.gif"/>
-=======
-              <Image iconType="3" name="/AgenciaVuelosImagenes/1.gif"/>
->>>>>>> elizabeth/master
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 226]"/>
@@ -256,7 +239,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/Yes.png"/>
+              <Image iconType="3" name="/AImagenesSanJose/Iconos/Yes.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ACEPTAR"/>
           </Properties>
@@ -271,7 +254,7 @@
               <Font name="Tahoma" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/AgenciaVuelosImagenes/Iconos/ELIMINAR.jpg"/>
+              <Image iconType="3" name="/AImagenesSanJose/Iconos/ELIMINAR.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CANCELAR"/>
           </Properties>
